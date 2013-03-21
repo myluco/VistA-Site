@@ -1,0 +1,167 @@
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Obtaining and Installing Auxiliary Programs &mdash; VISTA  documentation</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/css/bootstrap-2.2.1.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/css/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/css/bootstrap-responsive-2.2.1.min.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/js/bootstrap-2.2.1.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="VISTA  documentation" href="index.html" />
+    <link rel="next" title="Instructions for Establishing and Testing the OSEHRA Code Base" href="README.html" />
+    <link rel="prev" title="Obtaining the Testing Code" href="ObtainingTestingCode.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+<div class="container">
+  
+  <div id="navbar" class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <a class="brand" href="index.html">VISTA Documentation</a>
+      <span class="navbar-text pull-left"><b></b></span>
+
+      <div class="nav-collapse">
+        <ul class="nav">
+          <li class="divider-vertical"></li>
+          
+            <li class="dropdown">
+  <a href="index.html" class="dropdown-toggle" data-toggle="dropdown">Contents <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="ChoosingMUMPSEnvironment.html">Choosing the MUMPS Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ImportCache.html">Retrieving the code from Git and Importing into Caché</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ImportGTM.html">Retrieving the code from Git and Importing into GT.M</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InstallCache.html">Installing Caché</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InstallGTM.html">Installing GT.M</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ObtainingTestingCode.html">Obtaining the Testing Code</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Obtaining and Installing Auxiliary Programs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="README.html">Instructions for Establishing and Testing the OSEHRA Code Base</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ReviewingResults.html">Viewing the Results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="RunningandUploadingTests.html">Running and Uploading OSEHRA Tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SetupTestingEnvironment.html">Set up the Testing Environment</a></li>
+</ul>
+</ul>
+</li>
+          
+          
+            
+		<li class="relation-container">
+  			<a href="README.html"
+        	 title="next chapter" class="relation">Next &raquo;</a>
+        	 <a href="ObtainingTestingCode.html"
+        	 title="previous chapter" class="relation">&laquo; Prev</a>
+        </li>
+          
+          
+        </ul>
+        
+          
+<form class="navbar-search pull-right" style="margin-bottom:-3px;" action="search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        
+      </div>
+    </div>
+  </div>
+
+  
+    <div class="localtoc table-bordered"><ul>
+<li><a class="reference internal" href="#">Obtaining and Installing Auxiliary Programs</a><ul>
+<li><a class="reference internal" href="#cmake-testing-utility">CMake testing utility</a></li>
+<li><a class="reference internal" href="#git">Git</a></li>
+<li><a class="reference internal" href="#python">Python</a></li>
+<li><a class="reference internal" href="#sikuli">Sikuli</a></li>
+<li><a class="reference internal" href="#scripting-interfaces-to-osehra-codebase">Scripting interfaces to OSEHRA codebase</a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+
+  
+  <div class="section" id="obtaining-and-installing-auxiliary-programs">
+<h1>Obtaining and Installing Auxiliary Programs<a class="headerlink" href="#obtaining-and-installing-auxiliary-programs" title="Permalink to this headline">¶</a></h1>
+<p>Testing the code requires several auxiliary programs to be available in the testing environment.
+The first component is a test driver, CMake, that configures the testing system, manages the generation of automatic tests from a template, executes the tests, and reports test results to the OSEHRA Software Quality Dashboard.
+In addition, some of the tests require scripting of user responses. For GT.M installations, the Linux utility Expect provides the scripting interface, while for Caché on Windows, this support is provided by the native scripting ability of the Caché Terminal.
+Instructions on how to obtain and install these programs follow.</p>
+<div class="section" id="cmake-testing-utility">
+<h2>CMake testing utility<a class="headerlink" href="#cmake-testing-utility" title="Permalink to this headline">¶</a></h2>
+<p>The testing capabilities are contained within the CMake family of programs. Installers for Windows, Linux and Mac can be downloaded from: <a class="reference external" href="http://cmake.org/cmake/resources/software.html">http://cmake.org/cmake/resources/software.html</a>. Go to the website, select the appropriate binary release and follow the instructions on installing CMake.</p>
+</div>
+<div class="section" id="git">
+<h2>Git<a class="headerlink" href="#git" title="Permalink to this headline">¶</a></h2>
+<p>Git can be downloaded from <a class="reference external" href="http://git-scm.com">http://git-scm.com</a>. It is a &#8220;free &amp; open source, distributed version control system designed to handle everything from small to very large projects with speed and efficiency.&#8221; It allows developers to create personal instances of a repository, maintain a set of local repository modifications, and contribute code back to the original repository. Standard installation scripts and documentation are available directly from the Git website.</p>
+</div>
+<div class="section" id="python">
+<h2>Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h2>
+<p>Python is a scripting language used to manage the packing and unpacking of the OSEHRA code base. It is free and Open Source. Python can be downloaded from <a class="reference external" href="http://www.python.org/download/">http://www.python.org/download/</a> using the instructions on the web site.</p>
+</div>
+<div class="section" id="sikuli">
+<h2>Sikuli<a class="headerlink" href="#sikuli" title="Permalink to this headline">¶</a></h2>
+<p>Optional Download:  Sikuli is a cross platform utility for test graphical user interfaces. Sikuli can be downloaded from <a class="reference external" href="http://sikuli.org/">http://sikuli.org/</a> using the instructions on the web site.  The VistA Functional Testing uses Sikuli to interact with a CPRS instance as a user would.  It uses a series of screenshots to find and act upon  various buttons, text fields, and icons.  At this point, CPRS only functions on a Windows operating system.  This makes the download optional for those that are using the testing on the Unix/Linux OS or those who do not plan to run the Functional Testing.</p>
+</div>
+<div class="section" id="scripting-interfaces-to-osehra-codebase">
+<h2>Scripting interfaces to OSEHRA codebase<a class="headerlink" href="#scripting-interfaces-to-osehra-codebase" title="Permalink to this headline">¶</a></h2>
+<p>The testing currently supports three types of MUMPS environments: Caché on Windows and Linux and GT.M on Linux.  Both programs use an interface to script the interaction with XINDEX.  Previously, we used two different programs(Expect, Caché Scripting) to connect to a system depending on the operating system.  Now we have created a python module, which is included in the VistA repository, that governs the connection to all three types of instances.  This simplifies the testing preparation, as only one python file can be used to test the various platforms of VistA.</p>
+<p>The <a class="reference external" href="http://code.osehra.org/gitweb?p=OSEHRA-Automated-Testing.git;a=blob;f=lib/vista/OSEHRAHelper.py;h=efc640a8544bd187b4cdad65a1bee827b58cc4ac;hb=HEAD">OSEHRAHelper.py</a> uses two Python libraries to connect to the various instances:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://docs.python.org/2/library/telnetlib.html">TELNET</a> :  Used to connect to a Caché on Windows instance. The TELNET library is one of the standard libraries.</li>
+<li><a class="reference external" href="http://www.noah.org/wiki/pexpect">PExpect</a> :  Use to connect to both of the Linux variants.  This is not a library that is included in the standard Python installation, but no downloading  is necessary.  We have already included the files in the VistA Repository.</li>
+</ul>
+</div>
+</div>
+
+
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right" id="footer-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+      
+      Created using <a href="http://sphinx.pocoo.org/" target="_blank">Sphinx</a> 1.1.3.<br/>
+    </p>
+    <p class="pull-left" id="footer-left">
+      Except where otherwise noted, content on this site is licensed under a <a href="http://creativecommons.org/licenses/by/3.0/" target="_blank">Creative Commons Attribution 3.0 License</a>.
+    </p>
+    </div>
+  </div>
+</footer>
+  </body>
+</html>

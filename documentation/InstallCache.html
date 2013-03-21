@@ -1,0 +1,299 @@
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Installing Caché &mdash; VISTA  documentation</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/css/bootstrap-2.2.1.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/css/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/css/bootstrap-responsive-2.2.1.min.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/js/bootstrap-2.2.1.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="VISTA  documentation" href="index.html" />
+    <link rel="next" title="Installing GT.M" href="InstallGTM.html" />
+    <link rel="prev" title="Retrieving the code from Git and Importing into GT.M" href="ImportGTM.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+<div class="container">
+  
+  <div id="navbar" class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <a class="brand" href="index.html">VISTA Documentation</a>
+      <span class="navbar-text pull-left"><b></b></span>
+
+      <div class="nav-collapse">
+        <ul class="nav">
+          <li class="divider-vertical"></li>
+          
+            <li class="dropdown">
+  <a href="index.html" class="dropdown-toggle" data-toggle="dropdown">Contents <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="ChoosingMUMPSEnvironment.html">Choosing the MUMPS Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ImportCache.html">Retrieving the code from Git and Importing into Caché</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ImportGTM.html">Retrieving the code from Git and Importing into GT.M</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Installing Caché</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InstallGTM.html">Installing GT.M</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ObtainingTestingCode.html">Obtaining the Testing Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ObtainingandInstallAuxPrograms.html">Obtaining and Installing Auxiliary Programs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="README.html">Instructions for Establishing and Testing the OSEHRA Code Base</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ReviewingResults.html">Viewing the Results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="RunningandUploadingTests.html">Running and Uploading OSEHRA Tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SetupTestingEnvironment.html">Set up the Testing Environment</a></li>
+</ul>
+</ul>
+</li>
+          
+          
+            
+		<li class="relation-container">
+  			<a href="InstallGTM.html"
+        	 title="next chapter" class="relation">Next &raquo;</a>
+        	 <a href="ImportGTM.html"
+        	 title="previous chapter" class="relation">&laquo; Prev</a>
+        </li>
+          
+          
+        </ul>
+        
+          
+<form class="navbar-search pull-right" style="margin-bottom:-3px;" action="search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        
+      </div>
+    </div>
+  </div>
+
+  
+    <div class="localtoc table-bordered"><ul>
+<li><a class="reference internal" href="#">Installing Caché</a><ul>
+<li><a class="reference internal" href="#download-and-install-cache">Download and Install Caché</a></li>
+<li><a class="reference internal" href="#configuring-cache">Configuring Caché</a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+
+  
+  <div class="section" id="installing-cache">
+<h1>Installing Caché<a class="headerlink" href="#installing-cache" title="Permalink to this headline">¶</a></h1>
+<p>The following instructions were adapted from Nancy Anthracite&#8217;s document entitled InstallingVistAWithSingleUserVersionCache5.2, which was created to guide a user through installing InterSystems Caché onto a Windows operating system. The instructions were using an older version of Caché; this uses the most recent trial version and shows the most recent Management Portal interface.</p>
+<p>Trial versions of the Caché installer can be downloaded from <a class="reference external" href="http://download.intersystems.com/download/register.csp">http://download.intersystems.com/download/register.csp</a>. This installation guide uses Caché 2011.1. If you already have a Caché installation and are looking to install VistA as an additional database, you do not have to re-install Caché. Please use your existing installation and pick up the instructions at the point where the folder is created within the mgr folder.</p>
+<div class="section" id="download-and-install-cache">
+<h2>Download and Install Caché<a class="headerlink" href="#download-and-install-cache" title="Permalink to this headline">¶</a></h2>
+<p>Download the Caché installer from the above link and double click on the downloaded  .exe file. The first window that requires interaction is the Licensing Agreement shown in the figure below. Agree to the license in order to continue in the installation process.</p>
+<div class="figure align-center">
+<img alt="Caché License Terms" src="http://code.osehra.org/content/named/SHA1/df177515-Cache2011License.png" />
+</div>
+<p>The next window asks to set the directory in which Caché will be installed. Most users will be able to accept the default path. If more than one instance is found on the machine, the next instances will be denoted with a number appended to the end of the instance name.</p>
+<div class="figure align-center">
+<img alt="Setting the installation path for Caché" src="http://code.osehra.org/content/named/SHA1/3c138d88-Cache2011InstallPath.png" />
+</div>
+<p>Once the install directory is set, the installer will display a summary of the instance that will be installed in the process.
+There is the option to enter a license if you have one, but this is not a required step for the current testing configuration.</p>
+<div class="figure align-center">
+<img alt="Summary of Caché installation options" src="http://code.osehra.org/content/named/SHA1/85434e9e-Cache2011InstallSummary.png" />
+</div>
+<p>After the installation has finished, the completion screen is shown.</p>
+<div class="figure align-center">
+<img alt="Final window of Caché Installation" src="http://code.osehra.org/content/named/SHA1/46c175c7-Cache2011InstallComplete.png" />
+</div>
+<p>The first sign of a correctly installed and running instance of Caché is the Caché Cube in the taskbar, like below.</p>
+<div class="figure align-center">
+<img alt="Screenshot of Caché Cube in taskbar." src="http://code.osehra.org/content/named/SHA1/d3df0e66-Cache2011Cube.png" />
+</div>
+<p>Clicking on the Cube will open a menu that displays the options to interact with the Caché database.</p>
+<div class="figure align-center">
+<img alt="The main menu that shows when the Caché Cube is clicked." src="http://code.osehra.org/content/named/SHA1/31e12788-Cache2011MenuDoc.png" />
+</div>
+<p>The next test to ensure that your Caché instance is working is to open the documentation. This will bring up the documentation home page in your default web browser.</p>
+<div class="figure align-center">
+<img alt="Documentation font page in the web browser Google Chrome." src="http://code.osehra.org/content/named/SHA1/83e31c7b-Cache2011DocMainPage.png" />
+</div>
+</div>
+<div class="section" id="configuring-cache">
+<h2>Configuring Caché<a class="headerlink" href="#configuring-cache" title="Permalink to this headline">¶</a></h2>
+<p>Once Caché is installed, it is time to create the proper folders and environment to run the VistA instance within Caché. The first step is to go to the mgr folder of Caché and create a new folder as shown below. This folder will hold the database file cache.dat that will contain the VistA routines and globals.</p>
+<div class="figure align-center">
+<img alt="mgr folder prior to creation of VistA folder" src="http://code.osehra.org/content/named/SHA1/0f2c2ab6-Cache2011MgrFldr.png" />
+</div>
+<p>As an example, the folder has been given the name &#8220;VistA.&#8221; While the choice of name has no bearing on the installation, the testing code requires that the Namespace chosen below in matches the folder name created in this step.</p>
+<div class="figure align-center">
+<img alt="mgr folder post-creation of VistA folder" src="http://code.osehra.org/content/named/SHA1/18a90c5b-Cache2011MgrFldrVistA.png" />
+</div>
+<p>At this point we are ready to stand up the VistA instance. Right click on the Caché cube and select Management Portal of Caché.</p>
+<div class="figure align-center">
+<img alt="Management Portal link in Caché" src="http://code.osehra.org/content/named/SHA1/1f2af02f-Cache2011MenuSysMgt.png" />
+</div>
+<p>This link will open a Management Portal web page.  Click on System Administration to show administrative options.</p>
+<div class="figure align-center">
+<img alt="Main page of the Management Portal" src="http://code.osehra.org/content/named/SHA1/747ca57e-Cache2011SysMgtMain.png" />
+</div>
+<p>System Administration shows those options that can be used to change the Caché system. Our goal is to use the Configuration function to create and initialize an empty database that can then be filled with the VistA routines and globals. Starting from :alt: , click on Configuration, System Configuration, and Local Databases to arrive at :alt: .</p>
+<div class="figure align-center">
+<img alt="System Administration page of Management Portal" src="http://code.osehra.org/content/named/SHA1/f36ea51c-Cache2011SysAdminMenu.png" />
+</div>
+<p>Create the database by clicking on the Local Databases tab and then selecting Go.</p>
+<div class="figure align-center">
+<img alt="System Configuration menu." src="http://code.osehra.org/content/named/SHA1/f245cb17-Cache2011SysConfigMenu.png" />
+</div>
+<p>This resulting page contains the list of all of the local databases. All of the selections shown were created automatically during the installation of Caché. Create a new database by clicking on the &#8220;Create New Database&#8221; button. This will bring up a wizard.</p>
+<div class="figure align-center">
+<img alt="Local Databases page with pointer to Create New Database button." src="http://code.osehra.org/content/named/SHA1/2cc2f9ea-Cache2011CreateDatabase.png" />
+</div>
+<p>Set the directory entry to the folder that you created and set the database name. We recommend using the same name as the folder, but this is not necessary. When satisfied, select &#8220;Next&#8221; to proceed.</p>
+<div class="figure align-center">
+<img alt="First page of the Database Wizard." src="http://code.osehra.org/content/named/SHA1/eacb4e1c-Cache2011DatabaseWizardName.png" />
+</div>
+<p>It is not necessary to change any of the default settings to enable testing and we recommend simply hitting Finish to proceed.
+However, if there are known required settings for the current site, these settings can be modified.</p>
+<div class="figure align-center">
+<img alt="Details of the Database Wizard" src="http://code.osehra.org/content/named/SHA1/a0ead746-Cache2011DatabaseWizardDetails.png" />
+</div>
+<p>Verify that the newly created database appears in the database listing.</p>
+<div class="figure align-center">
+<img alt="Database listing with the inclusion of the recently created VistA database." src="http://code.osehra.org/content/named/SHA1/73ac678d-Cache2011ShowNewDatabase.png" />
+</div>
+<p>We now will configure the namespace for the newly created database. Navigate back to the System Configuration menu, click on the Namespaces option.</p>
+<div class="figure align-center">
+<img alt="Choosing Namespaces from System Configuration Menu" src="http://code.osehra.org/content/named/SHA1/24613b57-Cache2011ConfigureNameSpace.png" />
+</div>
+<p>Then, click on the &#8220;Create New Namespace&#8221; button to open a wizard.</p>
+<div class="figure align-center">
+<img alt="Namespace listing and button to create a new namespace." src="http://code.osehra.org/content/named/SHA1/374ab649-Cache2011CreateNewNamespace.png" />
+</div>
+<p>In the wizard, enter the name of the namespace and then select the database created above. Be certain to name the Namespace the same as the folder created above. Click on &#8220;Save&#8221; to finish the Namespace creation and to return to the namespace listing.</p>
+<div class="figure align-center">
+<img alt="Choosing the name of the namespace and the database it maps to." src="http://code.osehra.org/content/named/SHA1/6ea5a988-Cache2011NamespaceForm.png" />
+</div>
+<p>Verify that the new namespace is now in the list of current namespaces.</p>
+<p>The next steps will be configuring the global and routine mappings, both of which are accessed from this page. We will focus on the global mapping first.</p>
+<blockquote>
+<div><div class="figure align-center">
+<img alt="Namespace listing with the new namespace in it. The boxes highlight the links for mapping globals and routines." src="http://code.osehra.org/content/named/SHA1/d5960250-Cache2011GlobalMappingSelect.png" />
+</div>
+</div></blockquote>
+<p>To create the new mapping, click on New Global Mapping.  This opens another configuration wizard.</p>
+<div class="figure align-center">
+<img alt="Setting the Global Mapping." src="http://code.osehra.org/content/named/SHA1/9fd55585-Cache2011NewGlobalMapping.png" />
+</div>
+<p>For VistA, there is only one global mapping that needs to be made.
+First set the Global Database location to the VistA database name, and for the Global Name enter &#8220;%Z*&#8221;. This will map all globals that start with &#8220;%Z&#8221; to be specific to the VistA namespace. Click OK and the wizard will exit and display the new mapping in the window.
+Be sure to click on Save Changes before navigating back to the Namespaces page.</p>
+<div class="figure align-center">
+<img alt="Adding the %Z* mapping to the globals." src="http://code.osehra.org/content/named/SHA1/3330d488-Cache2011SetGlobalMapping.png" />
+</div>
+<p>Verify that the global mapping has been saved to the namespace.</p>
+<div class="figure align-center">
+<img alt="Page displaying the newly mapped globals." src="http://code.osehra.org/content/named/SHA1/4c432905-Cache2011SaveGlobalMapping.png" />
+</div>
+<p>The final step before Caché is ready for the import is to map the routines. From within the Namespaces menu in the Management Portal, click on the Routine Mappings link.</p>
+<div class="figure align-center">
+<img alt="Selecting the namespace mapping link." src="http://code.osehra.org/content/named/SHA1/d12fc19d-Cache2011RoutineMappingSelect.png" />
+</div>
+<p>This page will list the current routine mappings for the VistA namespace.
+Much like the globals, there are no current mappings. Click on the New Routine Mapping button to bring up the routine mapping wizard.</p>
+<div class="figure align-center">
+<img alt="Adding new Routine Mappings." src="http://code.osehra.org/content/named/SHA1/7df74cae-Cache2011NewRoutineMapping.png" />
+</div>
+<p>Again select the database location that corresponds to the VistA database, enter &#8220;%DT*&#8221; into the Routine name, and click Apply. This adds the first namespace mapping to the VistA database.</p>
+<div class="figure align-center">
+<img alt="Entering the first routine mapping." src="http://code.osehra.org/content/named/SHA1/614140b7-Cache2011SetRoutineMapping.png" />
+</div>
+<p>There are six other mappings that need to be entered in the same manner -</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><p class="first">%RCR</p>
+<p>%XU*</p>
+<p>%ZIS*</p>
+<p>%ZO*</p>
+<p>%ZT*</p>
+<p class="last">%ZV*</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>After the final mapping is set, click OK to be sent back to the Routine Mapping page. You should now see the seven mappings listed on the page. Click on the Save Changes button.</p>
+<div class="figure align-center">
+<img alt="Final listing of Routine Mappings and the Save Changes button." src="http://code.osehra.org/content/named/SHA1/76ede01b-Cache2011SaveRoutineMapping.png" />
+</div>
+<p>The final step of preparing the Caché installation for testing is to set the instance to allow TELNET service. This is done though the System Administration &gt; Security &gt; Services menu.</p>
+<div class="figure align-center">
+<img alt="Menu path to the Services option." src="http://code.osehra.org/content/named/SHA1/494cd956-Cache2011ServicesMenu.png" />
+</div>
+<p>Click on Go to be brought to the menu which lists all services that are supported by Caché. Near the bottom of the list you will see the &#8220;%Service_Telnet&#8221; listing.</p>
+<div class="figure align-center">
+<img alt="The list of Services available to Caché" src="http://code.osehra.org/content/named/SHA1/8af9b9f4-Cache2011TelenetServiceoff.png" />
+</div>
+<p>Click on the link to bring up the &#8220;Edit Service&#8221; page (:alt: ).</p>
+<div class="figure align-center">
+<img alt="Edit Service page for %Service_Telnet." src="http://code.osehra.org/content/named/SHA1/6f00d817-Cache2011TelnetServiceEdit.png" />
+</div>
+<p>To enable the Telnet session, simply check the box next to &#8220;Service Enabled&#8221; and then click &#8220;Save&#8221;.</p>
+<div class="figure align-center">
+<img alt="Enabling the Telenet service." src="http://code.osehra.org/content/named/SHA1/b2fe0970-Cache2011EnableTelnetService.png" />
+</div>
+<p>After saving, the Services menu will now show that the Telnet service is enabled.</p>
+<div class="figure align-center">
+<img alt="Services menu with Telnet enabled" src="http://code.osehra.org/content/named/SHA1/a354a916-Cache2011TelnetServiceEnabled.png" />
+</div>
+</div>
+</div>
+
+
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right" id="footer-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+      
+      Created using <a href="http://sphinx.pocoo.org/" target="_blank">Sphinx</a> 1.1.3.<br/>
+    </p>
+    <p class="pull-left" id="footer-left">
+      Except where otherwise noted, content on this site is licensed under a <a href="http://creativecommons.org/licenses/by/3.0/" target="_blank">Creative Commons Attribution 3.0 License</a>.
+    </p>
+    </div>
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,146 @@
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Viewing the Results &mdash; VISTA  documentation</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/css/bootstrap-2.2.1.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/css/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/css/bootstrap-responsive-2.2.1.min.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/js/bootstrap-2.2.1.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="VISTA  documentation" href="index.html" />
+    <link rel="next" title="Running and Uploading OSEHRA Tests" href="RunningandUploadingTests.html" />
+    <link rel="prev" title="Instructions for Establishing and Testing the OSEHRA Code Base" href="README.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+<div class="container">
+  
+  <div id="navbar" class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <a class="brand" href="index.html">VISTA Documentation</a>
+      <span class="navbar-text pull-left"><b></b></span>
+
+      <div class="nav-collapse">
+        <ul class="nav">
+          <li class="divider-vertical"></li>
+          
+            <li class="dropdown">
+  <a href="index.html" class="dropdown-toggle" data-toggle="dropdown">Contents <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="ChoosingMUMPSEnvironment.html">Choosing the MUMPS Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ImportCache.html">Retrieving the code from Git and Importing into Caché</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ImportGTM.html">Retrieving the code from Git and Importing into GT.M</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InstallCache.html">Installing Caché</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InstallGTM.html">Installing GT.M</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ObtainingTestingCode.html">Obtaining the Testing Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ObtainingandInstallAuxPrograms.html">Obtaining and Installing Auxiliary Programs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="README.html">Instructions for Establishing and Testing the OSEHRA Code Base</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Viewing the Results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="RunningandUploadingTests.html">Running and Uploading OSEHRA Tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SetupTestingEnvironment.html">Set up the Testing Environment</a></li>
+</ul>
+</ul>
+</li>
+          
+          
+            
+		<li class="relation-container">
+  			<a href="RunningandUploadingTests.html"
+        	 title="next chapter" class="relation">Next &raquo;</a>
+        	 <a href="README.html"
+        	 title="previous chapter" class="relation">&laquo; Prev</a>
+        </li>
+          
+          
+        </ul>
+        
+          
+<form class="navbar-search pull-right" style="margin-bottom:-3px;" action="search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        
+      </div>
+    </div>
+  </div>
+
+  
+    <div class="localtoc table-bordered"><ul>
+<li><a class="reference internal" href="#">Viewing the Results</a></li>
+</ul>
+</div>
+
+
+  
+  <div class="section" id="viewing-the-results">
+<h1>Viewing the Results<a class="headerlink" href="#viewing-the-results" title="Permalink to this headline">¶</a></h1>
+<p>Executing  &#8220;ctest  - Experimental&#8221; or &#8220;ctest - Nightly,&#8221; for example,  will upload the test results to the OSEHRA Software Quality Dashboard (<a class="reference external" href="http://code.osehra.org/CDash/index.php?project=Open+Source+EHR">http://code.osehra.org/CDash/index.php?project=Open+Source+EHR</a>) as shown below.
+Note that the entries are organized by sections for different test types, Nightly or Experimental. The site name is the name of the machine running the tests, and build name is the operating system.</p>
+<div class="figure align-center">
+<img alt="OSEHRA Software Quality Dashboard" src="http://code.osehra.org/content/named/SHA1/2c29c641-Dashboard.png" />
+</div>
+<p>The coverage results are found at the bottommost section of the dashboard page.</p>
+<div class="figure align-center">
+<img alt="OSEHRA Software Quality Dashboard with the Coverage section highlighted" src="http://code.osehra.org/content/named/SHA1/6025479c-DashboardCoverageHighLight.png" />
+</div>
+<p>Clicking on the percentage will open a new page with detailed information on the individual files
+sorted by percentage of the lines of the files used and a line-by-line display of what code was executed.</p>
+<div class="figure align-center">
+<img alt="Example coverage report using the SDCO21.m routine" src="http://code.osehra.org/content/named/SHA1/71cbd0bf-ExampleDashboardCoverage.png" />
+</div>
+<p>More detailed information about the Dashboard&#8217;s capabilities and displays can be found <a class="reference external" href="http://public.kitware.com/Wiki/CDash:Documentation">here</a>.</p>
+</div>
+
+
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right" id="footer-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+      
+      Created using <a href="http://sphinx.pocoo.org/" target="_blank">Sphinx</a> 1.1.3.<br/>
+    </p>
+    <p class="pull-left" id="footer-left">
+      Except where otherwise noted, content on this site is licensed under a <a href="http://creativecommons.org/licenses/by/3.0/" target="_blank">Creative Commons Attribution 3.0 License</a>.
+    </p>
+    </div>
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,478 @@
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Set up the Testing Environment &mdash; VISTA  documentation</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/css/bootstrap-2.2.1.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/css/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/css/bootstrap-responsive-2.2.1.min.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/js/bootstrap-2.2.1.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="VISTA  documentation" href="index.html" />
+    <link rel="prev" title="Running and Uploading OSEHRA Tests" href="RunningandUploadingTests.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+<div class="container">
+  
+  <div id="navbar" class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <a class="brand" href="index.html">VISTA Documentation</a>
+      <span class="navbar-text pull-left"><b></b></span>
+
+      <div class="nav-collapse">
+        <ul class="nav">
+          <li class="divider-vertical"></li>
+          
+            <li class="dropdown">
+  <a href="index.html" class="dropdown-toggle" data-toggle="dropdown">Contents <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="ChoosingMUMPSEnvironment.html">Choosing the MUMPS Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ImportCache.html">Retrieving the code from Git and Importing into Caché</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ImportGTM.html">Retrieving the code from Git and Importing into GT.M</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InstallCache.html">Installing Caché</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InstallGTM.html">Installing GT.M</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ObtainingTestingCode.html">Obtaining the Testing Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ObtainingandInstallAuxPrograms.html">Obtaining and Installing Auxiliary Programs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="README.html">Instructions for Establishing and Testing the OSEHRA Code Base</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ReviewingResults.html">Viewing the Results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="RunningandUploadingTests.html">Running and Uploading OSEHRA Tests</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Set up the Testing Environment</a></li>
+</ul>
+</ul>
+</li>
+          
+          
+            
+  <li class="relation-container"><a href="RunningandUploadingTests.html"
+         title="previous chapter">&laquo; Prev</a></li>
+          
+          
+        </ul>
+        
+          
+<form class="navbar-search pull-right" style="margin-bottom:-3px;" action="search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        
+      </div>
+    </div>
+  </div>
+
+  
+    <div class="localtoc table-bordered"><ul>
+<li><a class="reference internal" href="#">Set up the Testing Environment</a><ul>
+<li><a class="reference internal" href="#test-vista-variables">TEST_VISTA Variables</a><ul>
+<li><a class="reference internal" href="#xindex-testing">XINDEX Testing</a></li>
+<li><a class="reference internal" href="#test-vista-coverage">TEST_VISTA_COVERAGE</a></li>
+<li><a class="reference internal" href="#test-vista-fresh-and-test-vista-setup">TEST_VISTA_FRESH and TEST_VISTA_SETUP</a></li>
+<li><a class="reference internal" href="#test-vista-functional-sik">TEST_VISTA_FUNCTIONAL_SIK</a></li>
+<li><a class="reference internal" href="#test-vista-functional-ras">TEST_VISTA_FUNCTIONAL_RAS</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#example-testing-setup">EXAMPLE TESTING SETUP</a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+
+  
+  <div class="section" id="set-up-the-testing-environment">
+<h1>Set up the Testing Environment<a class="headerlink" href="#set-up-the-testing-environment" title="Permalink to this headline">¶</a></h1>
+<p>To configure the environment for testing, start the cmake-gui.exe. Once it has started, set the two paths at the top of the window so that the source code points to the Testing Source Directory from step 1 above.
+This directory will point to a directory (folder) containing CMakeLists.txt file. The Binaries path can go to a folder of your choice,
+but note that whatever directory is provided will be the Testing Binary Directory, and after configuration, it will contain CMake files defining the tests to be run.</p>
+<div class="figure align-center">
+<img alt="Initial cmake-gui page." src="http://code.osehra.org/content/named/SHA1/40eae47a-cmakeGUIHighlights.png" />
+</div>
+<p>Once those are set, click the Configure button. The interface will then ask you to specify a generator. These are normally used to check for working C and C++ compilers.
+For VistA testing, the generator does nothing and it therefore not used. We recommend using the Borland Makefile if on a Windows environment and the Unix Makefiles in a Linux system. Click finish after the selection is made to continue the configuration process.</p>
+<div class="figure align-center">
+<img alt="Generator selection." src="http://code.osehra.org/content/named/SHA1/24c3b506-cmakeGUIWinGeneratorSelection.png" />
+</div>
+<p>Following generator selection, the interface will produce a highlighted display such as for Linux:</p>
+<div class="figure align-center">
+<img alt="Linux interface after generator selection is complete." src="http://code.osehra.org/content/named/SHA1/7433a9bf-cmakeGUILinuxPostConfig.png" />
+</div>
+<p>and for Windows:</p>
+<div class="figure align-center">
+<img alt="Windows interface after generator selection is complete." src="http://code.osehra.org/content/named/SHA1/f943a02c-cmakeGUIWinPostConfig.png" />
+</div>
+<p>The entries in the window are the variables which can be set to control the testing process. Most of the values should be set correctly by the automated configuration process, but the
+scripting environment and the location of the VistA source code may need to be set appropriately. To aid in the configuring, most variables have a mouse-over tip which explains in greater
+detail what the variable should contain.  NOTE: The &#8220;Found&#8221; messages for each of the programs will only be displayed on the initial configuration of the system.  To see the variables at a
+later date, follow the instructions at the bottom of this page.</p>
+<p>The variables found after the first configure are very straight forward.</p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="22%" />
+<col width="39%" />
+<col width="39%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Variable Name</th>
+<th class="head">Value for Testing in Caché</th>
+<th class="head">Value for Testing in GT.M</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>BUILD_DELPHI</td>
+<td>&#8220;On&#8221; to build CPRS from Source</td>
+<td>&#8220;On&#8221; to build CPRS from Source</td>
+</tr>
+<tr class="row-odd"><td>BUILD_TESTING</td>
+<td>ON</td>
+<td>ON</td>
+</tr>
+<tr class="row-even"><td>TEST_VISTA</td>
+<td>&#8220;On&#8221; to use OSEHRA Testing Harness</td>
+<td>&#8220;On&#8221; to use OSEHRA Testing Harness</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Once the options are chosen are set, press &#8220;Configure&#8221; again and a new set of variables will be shown in the window.</p>
+<div class="section" id="test-vista-variables">
+<h2>TEST_VISTA Variables<a class="headerlink" href="#test-vista-variables" title="Permalink to this headline">¶</a></h2>
+<p>Selecting the TEST_VISTA option and re-configuring will present a screen like below:</p>
+<div class="figure align-center">
+<img alt="After turning the TEST_VISTA option on, and reconfiguring" src="http://code.osehra.org/content/named/SHA1/2e0050ac-cmakeGUITestVistAConfig.png" />
+</div>
+<p>The following table has a list of some of the important variables to be set prior to testing and the description of the variable.  These variables are either used to determine what VistA system is currently installed or are common to both systems.</p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="26%" />
+<col width="38%" />
+<col width="37%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Variable Name</th>
+<th class="head">Value for Testing in Caché</th>
+<th class="head">Value for Testing in GT.M</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>GIT_EXECUTABLE</td>
+<td>Path to Git Executable</td>
+<td>Path to Git Executable</td>
+</tr>
+<tr class="row-odd"><td>PYTHON_EXECUTABLE</td>
+<td>Path to Python Executable</td>
+<td>Path to Python Executable</td>
+</tr>
+<tr class="row-even"><td>CCONTROL_EXECUTABLE</td>
+<td>Path to CControl Executable</td>
+<td>N/A</td>
+</tr>
+<tr class="row-odd"><td>CTERM_EXECUTABLE</td>
+<td>Path to CTerm Executable</td>
+<td>N/A</td>
+</tr>
+<tr class="row-even"><td>VISTA_CACHE_NAMESPACE</td>
+<td>Namespace of VistA routines</td>
+<td>N/A</td>
+</tr>
+<tr class="row-odd"><td>VISTA_CACHE_INSTANCE</td>
+<td>Caché Instance Name</td>
+<td>N/A</td>
+</tr>
+<tr class="row-even"><td>VISTA_CACHE_USERNAME</td>
+<td>Login Username for Caché
+(if necessary)</td>
+<td>N/A</td>
+</tr>
+<tr class="row-odd"><td>VISTA_CACHE_PASSWORD</td>
+<td>Login Password for Caché
+(if neccesary)</td>
+<td>N/A</td>
+</tr>
+<tr class="row-even"><td>GTM_DIST</td>
+<td>N/A</td>
+<td>Path to GTM distribution Dir</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>One thing to note, is that the VISTA_CACHE_PASSWORD is stored and used in plain-text form</p>
+<p>To see the value that is set for GIT_EXECUTABLE or PYTHON_EXECUTABLE after configuration, click on the &#8220;Advanced&#8221; toggle in the CMake GUI.</p>
+<div class="figure align-center">
+<img alt="CMake GUI with the Advance toggle labeled" src="http://code.osehra.org/content/named/SHA1/99c54e3d-cmakeGUIAdvancedHighlight.png" />
+</div>
+<p>This toggle is used to display other variables that have been configured, but should not require modification to run the testing.  This is where CMake will place
+the GIT_EXECUTABLE and PYTHON_EXECUTABLE variables and their found values.  Example values are shown below:</p>
+<div class="figure align-center">
+<img alt="Advanced variables with GIT_EXECUTABLE highlighted" src="http://code.osehra.org/content/named/SHA1/4e86850b-cmakeGUIAdvancedGitHighlight.png" />
+</div>
+<div class="figure align-center">
+<img alt="Advanced Variables with PYTHON_EXECUTABLE highlighted" src="http://code.osehra.org/content/named/SHA1/7617227f-cmakeGUIAdvancedPythonHighlight.png" />
+</div>
+<p>There are a large amount of options that are shown after the first configuration, this document will walk through the options, explain what each will do, and show variables that will appear
+after selecting the options.</p>
+<div class="section" id="xindex-testing">
+<h3>XINDEX Testing<a class="headerlink" href="#xindex-testing" title="Permalink to this headline">¶</a></h3>
+<p>Running XINDEX on the routines in the VistA instance is the default testing in the OSEHRA Harness.  It does not have an explicit option but does have a few variables that influence
+the testing procedure.</p>
+<div class="figure align-center">
+<img alt="Highlighted variables that change the XINDEX testing." src="http://code.osehra.org/content/named/SHA1/27b575fd-cmakeGUIXINDEXHighlights.png" />
+</div>
+<p>The TEST_VISTA_FRESH_M_DIR is the path to the directory with OSEHRA M repository checkout.  This repository is parsed to determine the Packages and routines to test.
+The TEST_VISTA_XINDEX_WARNINGS_AS_FAILURES is an option which changes the failure condition of the XINDEX tests.  With this option off, the test will fail if the XINDEX report
+returns a fatal error, &#8220;F -&#8221; in the output.  This option will cause a warning in the output &#8220;W -&#8221; as a failure condition.  The GREP_EXECUTABLE is used to find and print
+the line position of a returned error or warning in the source file during the reporting of the error. It can be found among the advanced variables like PYTHON_EXECTUABLE.
+The these variables are set in the following manner:</p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="35%" />
+<col width="31%" />
+<col width="34%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Variable Name</th>
+<th class="head">Value for Testing in Caché</th>
+<th class="head">Value for Testing in GT.M</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>TEST_VISTA_FRESH_M_DIR</td>
+<td>Path to OSEHRA M repository</td>
+<td>Path to OSEHRA M repository</td>
+</tr>
+<tr class="row-odd"><td>TEST_VISTA_XINDEX_WARNINGS_AS_FAILURES</td>
+<td>ON/OFF</td>
+<td>ON/OFF</td>
+</tr>
+<tr class="row-even"><td>TEST_VISTA_OUTPUT_DIR</td>
+<td>Path to folder where log files
+will be stored</td>
+<td>Path to folder where log files
+will be stored</td>
+</tr>
+<tr class="row-odd"><td>GREP_EXECUTABLE</td>
+<td>Path to Grep Executable</td>
+<td>Path to GREP Executable</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</div>
+<div class="section" id="test-vista-coverage">
+<h3>TEST_VISTA_COVERAGE<a class="headerlink" href="#test-vista-coverage" title="Permalink to this headline">¶</a></h3>
+<p><strong>This capability is only available on systems that have a CMake version that is 2.8.9 or higher.  This option will not show up with earlier versions of CMake.</strong></p>
+<p>The TEST_VISTA_COVERAGE option is used to enable a coverage calculation using the OSEHRA tests.  It keeps track of the lines of code that are executed during the tests and writes files
+that can be parsed by the testing sofware and displayed on the dashboard after submission.  The coverage is available for three types of OSEHRA Testing: XINDEX, MUnit, and the
+Roll-and-Scroll (RAS) tests.</p>
+<div class="figure align-center">
+<img alt="Highlighting the TEST_VISTA_COVERAGE option." src="http://code.osehra.org/content/named/SHA1/50006d42-cmakeGUICoverageHighlight.png" />
+</div>
+<p>While there are no more variables to set after selecting the TEST_VISTA_COVERAGE option, it does display warnings during the configuration.  These messages warn that the tests will take longer
+and will create other files in addition to the standard log files.  There is a warning that is specific to Caché environments, it warns that an Advanced Memory variable may need to be changed
+have the monitor be used.  It give the variable to change and how to test it.  The GT.M users will only see the timing warning.</p>
+<div class="figure align-center">
+<img alt="After selecting the TEST_VISTA_COVERAGE options, warnings are displayed in the output with the Caché specific warning." src="http://code.osehra.org/content/named/SHA1/f12fcd48-cmakeGUICoverageWarnings.png" />
+</div>
+<p>This option will create files in the binary directory with the extension of .mcov (GT.M M Coverage) or .cmcov (Caché M coverage).</p>
+</div>
+<div class="section" id="test-vista-fresh-and-test-vista-setup">
+<h3>TEST_VISTA_FRESH and TEST_VISTA_SETUP<a class="headerlink" href="#test-vista-fresh-and-test-vista-setup" title="Permalink to this headline">¶</a></h3>
+<p>There is an option that is not needed to run the testing but may become useful. The TEST_VISTA_FRESH option will show up during configuration of the VistA Testing.  It uses a series of
+Python scripts to clean the database of the VistA instance.   This would all be done during the build phase of a nightly dashboard submission.</p>
+<p>This combination can also configure the VistA instance and set up a fictional environment within VistA with fake patients, doctors and nurses, and a simple clinic.
+This information is required to be there for the functional tests to complete successfully.</p>
+<div class="figure align-center">
+<img alt="The CMake-GUI with the TEST_VISTA_FRESH option highlighted." src="http://code.osehra.org/content/named/SHA1/819c659c-cmakeGUIFreshHighlight.png" />
+</div>
+<p>To utilize this option on Caché, the TEST_VISTA_FRESH checkbox must be checked to tell CMake to configure the correct files. You will also need to create a new cache.dat using the steps
+from earlier and set the TEST_VISTA_FRESH_CACHE_DAT_EMPTY to point to the location of that newly created cache.dat.  It will then shut down the Caché instance,
+copy the empty database in place of the old one, restart Caché, then collect and import the OSEHRA routines and globals.</p>
+<div class="figure align-center">
+<img alt="The CMake-GUI on Windows/Caché after configuration." src="http://code.osehra.org/content/named/SHA1/40410f24-cmakeGUIFreshWinConfigure.png" />
+</div>
+<p>For GT.M, the overall process is the same, but has some internal actions that make it GT.M specific.  Instead of a the Caché variables, we ask for the TEST_VISTA_FRESH_GTM_GLOBALS_DAT and
+the TEST_VISTA_FRESH_GTM_ROUTINE_DIR.  The TEST_VISTA_FRESH_GTM_GLOBALS_DAT is the path to the database.dat that contains the VistA globals.  This file will be deleted and recreated
+automatically via the &#8216;MUPIP&#8217; command.  The  TEST_VISTA_FRESH_GTM_ROUTINE_DIR is the path to the folder that contains the VistA routines.  This folder will be removed and recreated so that all routines within the GT.M instance will be from the latest import.  The other GT.M specific variable is the TEST_VISTA_SETUP_UCI_NAME which is used during the configuring of the VistA instance.</p>
+<div class="figure align-center">
+<img alt="The CMake-GUI on Linux/GTM after configuration." src="http://code.osehra.org/content/named/SHA1/93943892-cmakeGUIFreshLinuxConfigure.png" />
+</div>
+<p>If you plan to use these options, there are more variables that need to be set:</p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="35%" />
+<col width="32%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Variable Name</th>
+<th class="head">Value for Testing in Caché</th>
+<th class="head">Value for Testing in GT.M</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>TEST_VISTA_SETUP_PRIMARY_HFS_DIRECTORY</td>
+<td>Path to temporary directory
+(&#64; will use process directory)</td>
+<td>Path to temporary directory
+(&#64; will use process directory)</td>
+</tr>
+<tr class="row-odd"><td>TEST_VISTA_SETUP_SITE_NAME</td>
+<td>Name for VistA site</td>
+<td>Name for VistA site</td>
+</tr>
+<tr class="row-even"><td>TEST_VISTA_SETUP_VOLUME_SET</td>
+<td>Volume set of Instance</td>
+<td>Volume set of VistA instance</td>
+</tr>
+<tr class="row-odd"><td>TEST_VISTA_GLOBAL_IMPORT_TIMEOUT</td>
+<td>Length of Timeout for Global Import</td>
+<td>Length of Timeout for Global Import</td>
+</tr>
+<tr class="row-even"><td>TEST_VISTA_FRESH</td>
+<td>ON</td>
+<td>ON</td>
+</tr>
+<tr class="row-odd"><td>TEST_VISTA_FRESH_CACHE_DAT_EMPTY</td>
+<td>Path to an empty CACHE.dat</td>
+<td>N/A</td>
+</tr>
+<tr class="row-even"><td>TEST_VISTA_FRESH_CACHE_DAT_VISTA</td>
+<td>Path to CACHE.dat that holds VistA</td>
+<td>N/A</td>
+</tr>
+<tr class="row-odd"><td>TEST_VISTA_FRESH_GTM_GLOBALS_DAT</td>
+<td>N/A</td>
+<td>Path to the database.dat with VistA</td>
+</tr>
+<tr class="row-even"><td>TEST_VISTA_FRESH_GTM_ROUTINE_DIR</td>
+<td>N/A</td>
+<td>Path to folder that contains VistA
+routines</td>
+</tr>
+<tr class="row-odd"><td>TEST_VISTA_SETUP_UCI_NAME</td>
+<td>N/A</td>
+<td>UCI name of VistA isntance</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</div>
+<div class="section" id="test-vista-functional-sik">
+<h3>TEST_VISTA_FUNCTIONAL_SIK<a class="headerlink" href="#test-vista-functional-sik" title="Permalink to this headline">¶</a></h3>
+<p>The OSEHRA Testing harness also the ability to use an open-source tool called Sikuli to test the CPRS and Vitals Manager interface.  Sikuli is a cross-platform GUI testing system which uses
+OpenCV and Jython, a combination of Java and Python, to match a script of supplied screenshots and act upon them.  Due to the limitations of CPRS, this tool will only be utilzed on Windows
+environments.  If the
+the Sikuli test starts and will look to click on icon s on the user&#8217;s desktop to start both programs.  The scripts also cause VistA to expect to interact with certain versions of each of
+the software.  Those versions are available for download from the <a href="#id1"><span class="problematic" id="id2">`OSEHRA website`_</span></a>.  The instructions for setting up the short cuts are also on that website.</p>
+<p>When running the CMake GUI, the option to use the CPRS Functional Testing is called TEST_VISTA_FUNCTIONAL_SIK</p>
+<div class="figure align-center">
+<img alt="Showing the TEST_VISTA_FUNCTIONAL_SIK option in the CMake-GUI" src="http://code.osehra.org/content/named/SHA1/eda76241-cmakeGUIFunctionalSIK.png" />
+</div>
+<p>After Pressing configure you can see some new variables come up on Windows. Since the CPRS executable can only be run within a Windows environment, this option will do nothing on a Linux/GTM
+or Linux/Caché environment.</p>
+<div class="figure align-center">
+<img alt="Showing the variables needed for the TEST_VISTA_FUNCTIONAL_SIK." src="http://code.osehra.org/content/named/SHA1/231d5fdd-cmakeGUIFunctionalSIKConfigure.png" />
+</div>
+<p>Those variables ask for path to the two GUIs that were either downloaded from the above line or already on the system.</p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="49%" />
+<col width="51%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Variable Name</th>
+<th class="head">Value for Testing in Windows/Caché</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>CPRS_EXECUTABLE</td>
+<td>Path to the CPRSChart.exe</td>
+</tr>
+<tr class="row-odd"><td>VITALS_MANAGER_EXECUTABLE</td>
+<td>Path to the VitalsManager.exe</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</div>
+<div class="section" id="test-vista-functional-ras">
+<h3>TEST_VISTA_FUNCTIONAL_RAS<a class="headerlink" href="#test-vista-functional-ras" title="Permalink to this headline">¶</a></h3>
+<p>The VistA repository also has the capability to test the local VistA instance through the Roll and Scroll (RAS) menu interface.</p>
+<div class="figure align-center">
+<img alt="Showing the TEST_VISTA_FUNCTIONAL_RAS option in the CMake GUI." src="http://code.osehra.org/content/named/SHA1/76b362b2-cmakeGUIFunctionalRAS.png" />
+</div>
+<p>There are currently two test suites that utilize the RAS functionality:  Scheduling and Problem List.  This option does not require any other
+variables to be set.</p>
+</div>
+</div>
+<div class="section" id="example-testing-setup">
+<h2>EXAMPLE TESTING SETUP<a class="headerlink" href="#example-testing-setup" title="Permalink to this headline">¶</a></h2>
+<p>After some number of rounds of configuration, no new variables will appear after a configuration step.  Once this happens, the &#8220;Generate&#8221; button can be pressed,
+and the tests will be generated.</p>
+<p>The following figure is an example of a fully configured testing environment, ready for the &#8220;Generate&#8221; step.</p>
+<div class="figure align-center">
+<img alt="A fully configured instance of the OSEHRA harness." src="http://code.osehra.org/content/named/SHA1/3690a391-cmakeGUIFullEnvironment.png" />
+</div>
+<p>The &#8220;Generate&#8221; will only add a single line to the output window saying</p>
+<div class="highlight-python"><pre>Generating done.</pre>
+</div>
+<p>This lets you know that the tests are ready to be run from the command line.</p>
+</div>
+</div>
+
+
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right" id="footer-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+      
+      Created using <a href="http://sphinx.pocoo.org/" target="_blank">Sphinx</a> 1.1.3.<br/>
+    </p>
+    <p class="pull-left" id="footer-left">
+      Except where otherwise noted, content on this site is licensed under a <a href="http://creativecommons.org/licenses/by/3.0/" target="_blank">Creative Commons Attribution 3.0 License</a>.
+    </p>
+    </div>
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,274 @@
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Running and Uploading OSEHRA Tests &mdash; VISTA  documentation</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/css/bootstrap-2.2.1.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/css/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/css/bootstrap-responsive-2.2.1.min.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/js/bootstrap-2.2.1.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="VISTA  documentation" href="index.html" />
+    <link rel="next" title="Set up the Testing Environment" href="SetupTestingEnvironment.html" />
+    <link rel="prev" title="Viewing the Results" href="ReviewingResults.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+<div class="container">
+  
+  <div id="navbar" class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <a class="brand" href="index.html">VISTA Documentation</a>
+      <span class="navbar-text pull-left"><b></b></span>
+
+      <div class="nav-collapse">
+        <ul class="nav">
+          <li class="divider-vertical"></li>
+          
+            <li class="dropdown">
+  <a href="index.html" class="dropdown-toggle" data-toggle="dropdown">Contents <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="ChoosingMUMPSEnvironment.html">Choosing the MUMPS Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ImportCache.html">Retrieving the code from Git and Importing into Caché</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ImportGTM.html">Retrieving the code from Git and Importing into GT.M</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InstallCache.html">Installing Caché</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InstallGTM.html">Installing GT.M</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ObtainingTestingCode.html">Obtaining the Testing Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ObtainingandInstallAuxPrograms.html">Obtaining and Installing Auxiliary Programs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="README.html">Instructions for Establishing and Testing the OSEHRA Code Base</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ReviewingResults.html">Viewing the Results</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Running and Uploading OSEHRA Tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SetupTestingEnvironment.html">Set up the Testing Environment</a></li>
+</ul>
+</ul>
+</li>
+          
+          
+            
+		<li class="relation-container">
+  			<a href="SetupTestingEnvironment.html"
+        	 title="next chapter" class="relation">Next &raquo;</a>
+        	 <a href="ReviewingResults.html"
+        	 title="previous chapter" class="relation">&laquo; Prev</a>
+        </li>
+          
+          
+        </ul>
+        
+          
+<form class="navbar-search pull-right" style="margin-bottom:-3px;" action="search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        
+      </div>
+    </div>
+  </div>
+
+  
+    <div class="localtoc table-bordered"><ul>
+<li><a class="reference internal" href="#">Running and Uploading OSEHRA Tests</a></li>
+</ul>
+</div>
+
+
+  
+  <div class="section" id="running-and-uploading-osehra-tests">
+<h1>Running and Uploading OSEHRA Tests<a class="headerlink" href="#running-and-uploading-osehra-tests" title="Permalink to this headline">¶</a></h1>
+<p>The configuration process sets up the test environment and prepares the system to perform the test functions. Once configuration is complete the tests are ready to be run.</p>
+<p>Testing is run from a command prompt, such as the Terminal in Linux and either the Cygwin Shell , Git Bash Shell, or the Windows command prompt in Windows. From any of these options, changing directory (cd) to the Testing Binary Directory of your test installation and entering &#8220;ctest&#8221; will run every test that has been created. Other ctest options allow or disallow specific tests or groups of tests to be run.
+To see usage information for ctest along with the list of available options enter &#8220;ctest &#8211;help&#8221;.</p>
+<pre class="literal-block">
+$ <span class="usertype">ctest -help</span>
+ctest version 2.8.10.1
+Usage
+
+  ctest [options]
+
+Options
+  -C &lt;cfg&gt;, --build-config &lt;cfg&gt;
+                              = Choose configuration to test.
+  -V,--verbose                = Enable verbose output from tests.
+  -VV,--extra-verbose         = Enable more verbose output from tests.
+  --debug                     = Displaying more verbose internals of CTest.
+  --output-on-failure         = Output anything outputted by the test program
+                                if the test should fail.  This option can
+                                also be enabled by setting the environment
+                                variable CTEST_OUTPUT_ON_FAILURE
+  -F                          = Enable failover.
+  -j &lt;jobs&gt;, --parallel &lt;jobs&gt;= Run the tests in parallel using thegiven
+                                number of jobs.
+  -Q,--quiet                  = Make ctest quiet.
+  -O &lt;file&gt;, --output-log &lt;file&gt;
+                              = Output to log file
+  -N,--show-only              = Disable actual execution of tests.
+  -L &lt;regex&gt;, --label-regex &lt;regex&gt;
+                              = Run tests with labels matching regular
+                                expression.
+  -R &lt;regex&gt;, --tests-regex &lt;regex&gt;
+                              = Run tests matching regular expression.
+  .
+  .
+  .
+</pre>
+<p>To display the tests that are currently available without actually performing the tests, enter &#8220;ctest -.&#8221;</p>
+<pre class="literal-block">
+$ <span class="usertype">ctest -N</span>
+Test project C:/Users/joe.snyder/Work/OSEHRA/VistA-build
+  Test   #1: XINDEX_Accounts_Receivable
+  Test   #2: XINDEX_Adverse_Reaction_Tracking
+  Test   #3: XINDEX_Asists
+  Test   #4: XINDEX_Authorization_Subscription
+  Test   #5: XINDEX_Auto_Replenishment_Ward_Stock
+  Test   #6: XINDEX_Automated_Information_Collection_System
+  Test   #7: XINDEX_Automated_Lab_Instruments
+  Test   #8: XINDEX_Automated_Medical_Information_Exchange
+  Test   #9: XINDEX_Barcode_Medication_Administration
+  Test  #10: XINDEX_Beneficiary_Travel
+  Test  #11: XINDEX_Capacity_Management_-_RUM
+  Test  #12: XINDEX_Capacity_Management_Tools
+  Test  #13: XINDEX_Care_Management
+  Test  #14: XINDEX_Clinical_Case_Registries
+  Test  #15: XINDEX_Clinical_Information_Resource_Network
+  Test  #16: XINDEX_Clinical_Monitoring_System
+  Test  #17: XINDEX_Clinical_Procedures
+  Test  #18: XINDEX_Clinical_Reminders
+  Test  #19: XINDEX_CMOP
+  Test  #20: XINDEX_Consult_Request_Tracking
+  Test  #21: XINDEX_Controlled_Substances
+  Test  #22: XINDEX_CPT_HCPCS_Codes
+  Test  #23: XINDEX_Dental
+  Test  #24: XINDEX_Dietetics
+  Test  #25: XINDEX_DRG_Grouper
+  Test  #26: XINDEX_Drug_Accountability
+  Test  #27: XINDEX_DSS_Extracts
+  Test  #28: XINDEX_E_Claims_Management_Engine
+  Test  #29: XINDEX_EEO_Complaint_Tracking
+  Test  #30: XINDEX_Electronic_Signature
+  Test  #31: XINDEX_Emergency_Department_Integration_Software
+  Test  #32: XINDEX_Engineering
+  Test  #33: XINDEX_Enrollment_Application_System
+  .
+  .
+  .
+</pre>
+<p>Entering the command &#8220;ctest -R &lt;string&gt;&#8221; allows you to specify a test by regular expression match of the string that is passed along with it.</p>
+<pre class="literal-block">
+$ <span class="usertype">ctest -R NDBI</span>
+Test project C:/Users/joe.snyder/Work/OSEHRA/VistA-build
+    Start 76: XINDEX_NDBI
+1/1 Test #76: XINDEX_NDBI ......................***Failed    2.69 sec
+
+0% tests passed, 1 tests failed out of 1
+
+Total Test time (real) =   2.89 sec
+
+The following tests FAILED:
+         76 - XINDEX_NDBI (Failed)
+Errors while running CTest
+</pre>
+<p>Among the most useful options to ctest is &#8220;-D.&#8221; The command &#8220;ctest -D &lt;Configuration&gt;,&#8221; with &lt;Configuration&gt; set to either Experimental, Nightly, or Continuous , will perform the testing and submit the test results to the OSEHRA Dashboard hosted at,</p>
+<blockquote>
+<div><a class="reference external" href="http://code.osehra.org/CDash/index.php?project=Open+Source+EHR">http://code.osehra.org/CDash/index.php?project=Open+Source+EHR</a></div></blockquote>
+<p>CTest options can be combined.  The following shows an example of combining the &#8220;-D&#8221;option for test execution and reporting with the &#8220;-R&#8221; option for selectively executing a set of tests.</p>
+<pre class="literal-block">
+$ <span class="usertype">ctest -R NDBI -D Experimental</span>
+   Site: PALAVEN.kitware
+   Build name: Win32-
+Create new tag: 20121217-2217 - Experimental
+Configure project
+   Each . represents 1024 bytes of output
+    . Size of output: 0K
+Build project
+   Each symbol represents 1024 bytes of output.
+   '!' represents an error and '*' a warning.
+    . Size of output: 0K
+   0 Compiler errors
+   0 Compiler warnings
+Test project C:/Users/joe.snyder/Work/OSEHRA/VistA-build
+    Start 76: XINDEX_NDBI
+1/1 Test #76: XINDEX_NDBI ......................***Failed    2.69 sec
+
+0% tests passed, 1 tests failed out of 1
+
+Total Test time (real) =   2.89 sec
+
+The following tests FAILED:
+         76 - XINDEX_NDBI (Failed)
+Performing coverage
+ Cannot find any coverage files. Ignoring Coverage request.
+Submit files (using http)
+   Using HTTP submit method
+   Drop site:http://code.osehra.org/CDash/submit.php?project=Open+Source+EHR
+   Uploaded: C:/Users/joe.snyder/Work/OSEHRA/VistA-build/Test
+ing/20121217-2217/Build.xml
+   Uploaded: C:/Users/joe.snyder/Work/OSEHRA/VistA-build/Test
+ing/20121217-2217/Configure.xml
+   Uploaded: C:/Users/joe.snyder/Work/OSEHRA/VistA-build/Test
+ing/20121217-2217/Test.xml
+   Submission successful
+Errors while running CTest
+</pre>
+<p>This method of running the tests through CTest is the same for either environment, as are the tests that are created.  Test creationt is done by gabbing
+each package name from the OSEHRA Code base folder.  This forms the name of the test and the routines that are contained inside the package.  This is done
+automatically, so as more packages are added to the code base over time, the amount of XINDEX tests will grow accordingly.</p>
+<p><strong>Note For Linux Users:</strong></p>
+<p>The GT.M version doesn&#8217;t automatically source the gtmprofile for manual testing. It is recommended that you add lines to the .bashrc file to make sure the environment is set up correctly:</p>
+<div class="highlight-python"><pre>source /opt/gtm/gtmprofile
+export gtmgbldir="/home/osehra/Downloads/VistA/database"
+export gtmroutines="/home/osehra/Downloads/VistA/o(/home/osehra/Downloads/VistA/r) ${gtm_dist}</pre>
+</div>
+</div>
+
+
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right" id="footer-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+      
+      Created using <a href="http://sphinx.pocoo.org/" target="_blank">Sphinx</a> 1.1.3.<br/>
+    </p>
+    <p class="pull-left" id="footer-left">
+      Except where otherwise noted, content on this site is licensed under a <a href="http://creativecommons.org/licenses/by/3.0/" target="_blank">Creative Commons Attribution 3.0 License</a>.
+    </p>
+    </div>
+  </div>
+</footer>
+  </body>
+</html>

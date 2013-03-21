@@ -1,0 +1,267 @@
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Installing GT.M &mdash; VISTA  documentation</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/css/bootstrap-2.2.1.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/css/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/css/bootstrap-responsive-2.2.1.min.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/js/bootstrap-2.2.1.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="VISTA  documentation" href="index.html" />
+    <link rel="next" title="Obtaining the Testing Code" href="ObtainingTestingCode.html" />
+    <link rel="prev" title="Installing Caché" href="InstallCache.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+<div class="container">
+  
+  <div id="navbar" class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <a class="brand" href="index.html">VISTA Documentation</a>
+      <span class="navbar-text pull-left"><b></b></span>
+
+      <div class="nav-collapse">
+        <ul class="nav">
+          <li class="divider-vertical"></li>
+          
+            <li class="dropdown">
+  <a href="index.html" class="dropdown-toggle" data-toggle="dropdown">Contents <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="ChoosingMUMPSEnvironment.html">Choosing the MUMPS Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ImportCache.html">Retrieving the code from Git and Importing into Caché</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ImportGTM.html">Retrieving the code from Git and Importing into GT.M</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InstallCache.html">Installing Caché</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Installing GT.M</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ObtainingTestingCode.html">Obtaining the Testing Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ObtainingandInstallAuxPrograms.html">Obtaining and Installing Auxiliary Programs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="README.html">Instructions for Establishing and Testing the OSEHRA Code Base</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ReviewingResults.html">Viewing the Results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="RunningandUploadingTests.html">Running and Uploading OSEHRA Tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SetupTestingEnvironment.html">Set up the Testing Environment</a></li>
+</ul>
+</ul>
+</li>
+          
+          
+            
+		<li class="relation-container">
+  			<a href="ObtainingTestingCode.html"
+        	 title="next chapter" class="relation">Next &raquo;</a>
+        	 <a href="InstallCache.html"
+        	 title="previous chapter" class="relation">&laquo; Prev</a>
+        </li>
+          
+          
+        </ul>
+        
+          
+<form class="navbar-search pull-right" style="margin-bottom:-3px;" action="search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        
+      </div>
+    </div>
+  </div>
+
+  
+    <div class="localtoc table-bordered"><ul>
+<li><a class="reference internal" href="#">Installing GT.M</a><ul>
+<li><a class="reference internal" href="#creation-of-folder-structure">Creation of Folder Structure</a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+
+  
+  <div class="section" id="installing-gt-m">
+<h1>Installing GT.M<a class="headerlink" href="#installing-gt-m" title="Permalink to this headline">¶</a></h1>
+<p>The GT.M system is available for download from <a class="reference external" href="http://sourceforge.net/projects/fis-gtm/">SourceForge</a>. This will download a compressed package which will need to be extracted before proceeding. The extraction can be in a location of your choice, as during the installation process you will be able to set where the installed files will be placed.  To have a common place where the GT.M files will be placed, we first create a folder within the /opt/ directory which will hold the files. The command used to create the folder is shown below.</p>
+<pre class="literal-block">
+$ <span class="usertype">sudo mkdir /opt/gtm</span>
+</pre>
+<p>The next step is to unzip and untar the downloaded files, which is assumed to be in the Downloads directory.</p>
+<p>To install GT.M, run the configure.sh file from what was just extracted. Since there will be changes made to the system, this step must be run as root or using sudo privileges.  This will start an interactive series of questions which will set up the GT.M installation for the system. See below for an example of the start of the configuration script and the first prompt for the user to enter information.</p>
+<pre class="literal-block">
+~/Downloads$ <span class="usertype">sudo ./configure</span>
+                     GT.M Configuration Script
+Copyright 2009, 2011 Fidelity National Information Services, Inc. Use of this
+software is restricted by the provisions of your license agreement.
+
+What user account should own the files? (bin)
+</pre>
+<p>For the first two options of the configuration, the account and group that would own the GT.M files, accept the default values. At the prompt that asks &#8220;Should execution of GT.M be restricted to this group?&#8221;  enter n, which will let all users access the GT.M environment. See below for the entries that should be set at this point in the configuration script.</p>
+<pre class="literal-block">
+What user account should own the files? (bin) <span class="usertype">&lt;ENTER&gt;</span>
+What group should own the files? (bin)        <span class="usertype">&lt;ENTER&gt;</span>
+Should execution of GT.M be restricted to this group? (y or n)  <span class="usertype">N</span>
+In what directory should GT.M be installed?
+</pre>
+<p>The next prompt asks &#8220;In what directory should GT.M be installed?&#8221;. Here enter a directory that will be used to hold all of the GT.M files, these instructions will put them into /opt/gtm. If the folder that you specify does not exist, you will get a message asking if you want to create it as part of the installation, you should answer yes. If you give it a path to an existing folder, it will warn you that some files may be overwritten during the installation process. Be sure to back up important files in the case that something is lost.</p>
+<pre class="literal-block">
+In what directory should GT.M be installed? <span class="usertype">/opt/gtm</span>
+Directory /opt/gtm exists.  If you proceed with this intallation then
+some files will be over-written.  Is it okay to proceed? (y or n)    <span class="usertype">Y</span>
+</pre>
+<p>The next prompt asks the user if they want to install Unicode support. If you feel it will be necessary, it can be installed, but we will not do it in these instructions. Enter your answer to proceed.</p>
+<pre class="literal-block">
+Installing GT.M...
+
+Should unicode support be installed? (y or n) <span class="usertype">n</span>
+
+All of the GT.M MUMPS routines are distributed with uppercase names.
+You can create lowercase copies of these routines if you wish, but
+to avoid problems with compatibility in the future, consider keeping
+only the uppercase versions of the files.
+
+Do you want uppercase and lowercase version of the MUMPS routines? (y or n)
+</pre>
+<p>Now that files are being installed, it asks if the user would like to keep both uppercase and lowercase versions of the MUMPS routines. We will answer no to maintain consistency between MUMPS and VistA. This will ensure that routine names for both environments are kept entirely in uppercase.</p>
+<pre class="literal-block">
+Do you want uppercase and lowercase version of the MUMPS routines? (y or n) <span class="usertype">n</span>
+Compiling all of the MUMPS routines.  This may take a moment.
+
+GTM&gt;
+%GDE-I-GDUSEDEFS, Using defaults for Global Directory
+        /opt/gtm/gtmhelp.gld
+GDE&gt;
+GDE&gt;
+GDE&gt;
+%GDE-I-VERIFY, Verification OK
+
+%GDE-I-GDCREATE, Creating Global Directory file
+        /opt/gtm/gtmhelp.gld
+
+GDE&gt;
+GDE&gt;
+GDE&gt;
+%GDE-I-VERIFY, Verification OK
+
+%GDE-I-GDCREATE, Creating Global Directory file
+        /opt/gtm/gtmhelp.gld
+
+Installation completed. Would you like all the temporary files
+removed from this directory? (y or n)
+</pre>
+<p>Now the installation of GT.M is complete. The last prompt asks if the user would like to remove the files in the current directory now that the installation is finished. Answer the prompt with a y or n with your preference. The script will then exit returning to the standard terminal prompt.</p>
+<pre class="literal-block">
+Installation completed. Would you like all the temporary files
+removed from this directory? (y or n) <span class="usertype">y</span>
+~/Downloads$
+</pre>
+<div class="section" id="creation-of-folder-structure">
+<h2>Creation of Folder Structure<a class="headerlink" href="#creation-of-folder-structure" title="Permalink to this headline">¶</a></h2>
+<p>The next step is to create a directory that contains the folders and files needed to hold the VistA routines and globals that GT.M will use. We will create this folder in the /Downloads directory, but this is not the only location. This location will be used as the database directory for VistA. Make a folder called VistA. Inside of that VistA folder, create another folder named r. The r folder will hold the routines that GT.M will use when running VistA. These steps are shown below.</p>
+<pre class="literal-block">
+~/Downloads$        <span class="usertype">mkdir VistA</span>
+~/Downloads$        <span class="usertype">cd VistA</span>
+~/Downloads/VistA$  <span class="usertype">mkdir r</span>
+~/Downloads/VistA$  <span class="usertype">mkdir o</span>
+~/Downloads/VistA$
+</pre>
+<p>The next step is to define and create the database that will be used to hold the information needed in the VistA instance. The first step is to source the gtmprofile that was created in the installation of GT.M: source  /opt/gtm/gtmprofile</p>
+<p>Once this is done we need to alter two environment variables that were just created to point the routines and globals to where the OSEHRA code base will reside. This will set up the environment variables needed to utilize GT.M from the command line. We will be changing the gtmgbldir entry and the gtmroutines entry. These control where the GT.M instance will look for globals and routines when it is running. These entries are set using the export command from the Linux terminal. The gtmgbldir should be set to the path to the VistA folder that was created above followed by &#8216;database&#8217;.  The gtmroutines will be set to contain two paths. The first is the path to the GT.M installation, in our case in the directory /opt/gtm/, and the path to the r folder within the VistA folder.</p>
+<div class="highlight-python"><pre>export gtmgbldir =/path/to/VistA/database
+export gtmroutines="/home/osehra/Downloads/VistA/o(/home/osehra/Downloads/VistA/r) /opt/gtm/ \"</pre>
+</div>
+<p>The example usage of these commands are found below:</p>
+<pre class="literal-block">
+~/Downloads$ <span class="usertype">source /opt/gtm/gtmprofile</span>
+~/Downloads$ <span class="usertype">export gtmgbldir=/home/osehra/Downloads/VistA/database</span>
+~/Downloads$ <span class="usertype">export gtmroutines=&quot;/home/osehra/Downloads/VistA/o(/home/osehra/Downloads/VistA/r) /opt/gtm.&quot;</span>
+~/Downloads$
+</pre>
+<p>The next step is to run the GT.M Global Directory Editor (GDE), accessed via the command:</p>
+<pre class="literal-block">
+~/Downloads$ <span class="usertype">mumps -r GDE</span>
+%GED-I-LOADGD, Loading Global Directory file
+        /home/osehra/Downloads/VistA/database.gld
+%GDE-I-VERIFY, Verification OK
+
+GDE&gt;
+</pre>
+<p>This command starts the GDE and will change the prompt from the standard terminal one to &#8220;GDE&gt;&#8221;. Within the GDE environment, the default database location needs to be changed. Enter the command::</p>
+<div class="highlight-python"><pre>change -s DEFAULT -f=/home/$user/Downloads/VistA/database</pre>
+</div>
+<p>replacing $user with your user name. After that command type exit and the changes will be applied.</p>
+<pre class="literal-block">
+GDE&gt; <span class="usertype">change -s DEFAULT -f=/home/osehra/Downloads/VistA/database</span>
+GDE&gt; <span class="usertype">exit</span>
+%GDE-I-VERIFY, Verification OK
+
+%GDE-I-GDCREATE, Creating Global Directory file
+        /home/osehra/Downloads/VistA/database.gld
+~/Downloads$
+</pre>
+<p>The next step is to create the database that is used from within the VistA folder. This is done using the mupip command. Mupip stands for MUMPS Peripheral Interchange Program. It is used to manage the database and the global directories. We will use mupip to create a database and the Database Structure Editor (DSE) to configure the database in one command.:</p>
+<div class="highlight-python"><pre>mupip create &amp;&amp; dse change -f -key_max=2046 -rec=4096</pre>
+</div>
+<p>The &#8220;mupip create&#8221; is what actually creates the database while the &#8220;dse change -f -key_max=1023 -rec=4096&#8221; changes the maximum size of a key which contains a global reference. If this is left at the default value of 255, certain globals will not be able to be imported.</p>
+<pre class="literal-block">
+~/Downloads$ <span class="usertype">cd VistA</span>
+~/Downloads/VistA$ <span class="usertype">mupip create &amp;&amp; dse change -f -key_max=1023 -rec=4096</span>
+Created file /home/osehra/Downloads/VistA/database.dat
+
+File    /home/osehra/Downloads/VistA/database.dat
+Region  DEFAULT
+
+~/Downloads/VistA$
+</pre>
+<p>Now, the environment is set up to import the routines and globals from the OSEHRA code base.</p>
+</div>
+</div>
+
+
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right" id="footer-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+      
+      Created using <a href="http://sphinx.pocoo.org/" target="_blank">Sphinx</a> 1.1.3.<br/>
+    </p>
+    <p class="pull-left" id="footer-left">
+      Except where otherwise noted, content on this site is licensed under a <a href="http://creativecommons.org/licenses/by/3.0/" target="_blank">Creative Commons Attribution 3.0 License</a>.
+    </p>
+    </div>
+  </div>
+</footer>
+  </body>
+</html>

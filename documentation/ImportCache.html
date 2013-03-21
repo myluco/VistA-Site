@@ -1,0 +1,365 @@
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Retrieving the code from Git and Importing into Caché &mdash; VISTA  documentation</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/css/bootstrap-2.2.1.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/css/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/css/bootstrap-responsive-2.2.1.min.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/js/bootstrap-2.2.1.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="VISTA  documentation" href="index.html" />
+    <link rel="next" title="Retrieving the code from Git and Importing into GT.M" href="ImportGTM.html" />
+    <link rel="prev" title="Choosing the MUMPS Environment" href="ChoosingMUMPSEnvironment.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+<div class="container">
+  
+  <div id="navbar" class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <a class="brand" href="index.html">VISTA Documentation</a>
+      <span class="navbar-text pull-left"><b></b></span>
+
+      <div class="nav-collapse">
+        <ul class="nav">
+          <li class="divider-vertical"></li>
+          
+            <li class="dropdown">
+  <a href="index.html" class="dropdown-toggle" data-toggle="dropdown">Contents <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="ChoosingMUMPSEnvironment.html">Choosing the MUMPS Environment</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Retrieving the code from Git and Importing into Caché</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ImportGTM.html">Retrieving the code from Git and Importing into GT.M</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InstallCache.html">Installing Caché</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InstallGTM.html">Installing GT.M</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ObtainingTestingCode.html">Obtaining the Testing Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ObtainingandInstallAuxPrograms.html">Obtaining and Installing Auxiliary Programs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="README.html">Instructions for Establishing and Testing the OSEHRA Code Base</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ReviewingResults.html">Viewing the Results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="RunningandUploadingTests.html">Running and Uploading OSEHRA Tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SetupTestingEnvironment.html">Set up the Testing Environment</a></li>
+</ul>
+</ul>
+</li>
+          
+          
+            
+		<li class="relation-container">
+  			<a href="ImportGTM.html"
+        	 title="next chapter" class="relation">Next &raquo;</a>
+        	 <a href="ChoosingMUMPSEnvironment.html"
+        	 title="previous chapter" class="relation">&laquo; Prev</a>
+        </li>
+          
+          
+        </ul>
+        
+          
+<form class="navbar-search pull-right" style="margin-bottom:-3px;" action="search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        
+      </div>
+    </div>
+  </div>
+
+  
+    <div class="localtoc table-bordered"><ul>
+<li><a class="reference internal" href="#">Retrieving the code from Git and Importing into Caché</a><ul>
+<li><a class="reference internal" href="#packing-routines-and-globals">Packing Routines and Globals</a></li>
+<li><a class="reference internal" href="#import-routines-and-globals-into-cache">Import routines and globals into Caché</a></li>
+<li><a class="reference internal" href="#configure-the-vista-environment">Configure the VistA Environment</a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+
+  
+  <div class="section" id="retrieving-the-code-from-git-and-importing-into-cache">
+<h1>Retrieving the code from Git and Importing into Caché<a class="headerlink" href="#retrieving-the-code-from-git-and-importing-into-cache" title="Permalink to this headline">¶</a></h1>
+<p>Starting from an empty instance of Caché, we need to retrieve the routines and globals that will populate the VistA environment from the OSEHRA Code Repository at code.osehra.org. Begin by bringing up a Git Bash terminal from the installed Git system.</p>
+<p>The git interface is a command-prompt interface with much of the functionality that should be familiar to Linux users; commands like &#8220;ls&#8221; and &#8220;cd&#8221; perform as they would in Cygwin shell or a Linux terminal. Git specific actions are always preceded by the &#8220;git&#8221; command on the input line. The command &#8220;git &#8211;help&#8221; displays a list of the most common commands.</p>
+<p>To obtain a copy of the repository, create a directory (Folder) to hold the repository code and &#8220;cd&#8221; into that directory. Enter the commands</p>
+<pre class="literal-block">
+$ <span class="usertype">git clone git://code.osehra.org/VistA-FOIA.git</span>
+Cloning into 'VistA-FOIA'...
+.
+.
+.
+$
+$ <span class="usertype">cd VistA-FOIA</span>
+</pre>
+<p>to make a local clone of the remote repository.</p>
+<div class="section" id="packing-routines-and-globals">
+<h2>Packing Routines and Globals<a class="headerlink" href="#packing-routines-and-globals" title="Permalink to this headline">¶</a></h2>
+<p>Within the Git repository, you can see the folders that contain all that is necessary to prepare the routines and globals to be imported into the Caché instance. The Packages folder contains all of the VistA FOIA software divided by package name.  Inside each package directory lies a Routines directory and a Globals directory. The latter contains globals divided up by the FileMan files they contain. The Scripts folder contains OSEHRA python scripts and helper routines. The python scripts are used to pack and unpack the routines.ro file, while the routines are used to import and export the globals from the MUMPS environment.</p>
+<p>Execute the following two commands to prepare the data for import .</p>
+<pre class="literal-block">
+VistA-FOIA$ <span class="usertype">git ls-files -- &quot;*.m&quot; | python Scripts/PackRO.py &gt; routines.ro</span>
+
+VistA-FOIA$ <span class="usertype">git ls-files -- &quot;*.zwr&quot; &gt; globals.lst</span>
+</pre>
+<p>The first command lists all the files that have the extension &#8216;.m&#8217; and passes those names to the python script PackRO.py to pack them into file routine.ro in routine transfer format. The second command lists all files that have the extension &#8216;.zwr&#8217; and writes those into globals.lst. This list will be read by the OSEHRA ZGI routine during the import step.</p>
+</div>
+<div class="section" id="import-routines-and-globals-into-cache">
+<h2>Import routines and globals into Caché<a class="headerlink" href="#import-routines-and-globals-into-cache" title="Permalink to this headline">¶</a></h2>
+<p>The next set of steps is to import the routines and globals into the Caché instance and then configure the instance to the point where testing can be performed. All of these steps are performed from the Caché terminal. Right click on the Caché icon and select terminal from the pop-up as shown to bring up a Caché terminal.</p>
+<p>The first step is to change from the default &#8220;USER&#8221; namespace to the namespace that you created earlier. Entering &#8220;D ^%CD&#8221; will bring up a prompt to accept the name of the new namespace that you want to enter. For demonstration purposes, we will assume that the namespace is called &#8220;VISTA&#8221;.</p>
+<pre class="literal-block">
+USER&gt; <span class="usertype">D ^%CD</span>
+
+Namespace: <span class="usertype">VISTA</span>
+Youre in namespace VISTA
+Default directory is c:intersystemstrycachemgrvistaVISTA&gt;
+</pre>
+<p>The %RI routine is a MUMPS routine that is used to import other routines from a specific file type. When prompted for a device, enter the path to the routines.ro file and press &lt;Enter&gt; to accept the default parameters, read-only mode. The terminal will then display a warning saying
+&#8220;This file may not be a %RO output file.&#8221; This is an expected warning due to how we are creating the routines.ro file. At the prompt, enter &#8220;Yes&#8221; to continue and then enter then &lt;Enter&gt; to accept the 0th option (Caché) for the routines write type. To fully import the routines, enter
+&#8220;All Routines&#8221; at the Routine Input Option, and answer &#8220;YES&#8221; to &#8220;replace similarly named routines.&#8221; All other options may be answered with &lt;Enter&gt; to accept the default value.</p>
+<pre class="literal-block">
+VISTA&gt; <span class="usertype">D ^%RI</span>
+Input routine from Sequential
+Device: (path to routines.ro)
+Parameters? &quot;R&quot; =&gt;  (enter)
+
+  <strong>*</strong>  W A R N I N G <strong>*</strong>
+
+File Header: Routines
+Date Stamp:
+
+This file many not be a %RO output file.
+Override and use this File with %RI? No =&gt;  &lt;Yes&gt;
+%RI has detected a routine written with UNKNOWN mode.
+   0) Cache
+   .
+   .
+   .
+   11) MVBASIC
+
+Please enter a number from the above list: <span class="usertype">0</span>
+
+File written by OLD with description:
+Routines
+( All Select Enter List Quit )
+
+Routine Input Option: <span class="usertype">All</span>
+
+If a selected routiens has the same name as one already on file,
+shall it replace the one on file? No =&gt; <span class="usertype">Yes</span>
+Recompile? Yes =&gt; <span class="usertype">Yes</span>
+Display Syntax Errors? Yes =&gt; <span class="usertype">Yes</span>
+</pre>
+<p>The system will respond with a list of all that have been processed and then displays the VistA prompt . In the listing, the symbols next to the routine name have meaning:</p>
+<p>^ indicates routines which will replace those now on file.</p>
+<p>&#64; indicates routines which have been [re]compiled.</p>
+<p>- indicates routines which have not been filed.</p>
+<p>The next step is to import the Globals using the newly imported ZGI routine. Enter</p>
+<pre class="literal-block">
+VISTA&gt; <span class="usertype">D LIST^ZGI(&quot;c:/path/to/VistA-FOIA/globals.lst&quot;,&quot;c:/path/to/VistA-FOIA/&quot;)</span>
+</pre>
+<p>where &#8220;path\to&#8221; is replaced with the path to the code download . This routine will go through all of the globals contained in the list file and import them into the VistA instance . The last package to be imported is the Wounded Injured and Ill Warriors.  The example below will demonstrate the command and the first/last globals to be imported.</p>
+<pre class="literal-block">
+VISTA&gt; <span class="usertype">D LIST^ZGI(&quot;C:/Users/joe.snyder/Desktop/testbin/globals.lst&quot;,&quot;C:/Users/joe.snyder/Desktop/VistA-FOIA/&quot;)</span>
+
+C:/Users/joe.snyder/Desktop/VistA-FOIA/Packages/Accounts Receivable/Globals/340+AR DEBTOR.zwr
+
+C:/Users/joe.snyder/Desktop/VistA-FOIA/Packages/Accounts Receivable/Globals/341+AR EVENT.zwr
+
+C:/Users/joe.snyder/Desktop/VistA-FOIA/Packages/Accounts Receivable/Globals/341.1+AR EVENT TYPE.zwr
+
+.
+.
+.
+
+C:/Users/joe.snyder/Desktop/VistA-FOIA/Packages/Womens Health/Globals/790.72+WV AGE RANGE DEFAULT.zwr
+
+C:/Users/joe.snyder/Desktop/VistA-FOIA/Packages/Womens Health/Globals/WV.zwr
+
+C:/Users/joe.snyder/Desktop/VistA-FOIA/Packages/Wounded Injured and Ill Warriors/Globals/987.5+WII ADMISSIONS DISCHARGES.zwr
+
+C:/Users/joe.snyder/Desktop/VistA-FOIA/Packages/Wounded Injured and Ill Warriors/Globals/987.6+WII PARAMETERS.zwr
+
+C:/Users/joe.snyder/Desktop/VistA-FOIA/Packages/Wounded Injured and Ill Warriors/Globals/WII.zwr
+
+
+VISTA&gt;
+</pre>
+</div>
+<div class="section" id="configure-the-vista-environment">
+<h2>Configure the VistA Environment<a class="headerlink" href="#configure-the-vista-environment" title="Permalink to this headline">¶</a></h2>
+<p>At this point, all routines and globals are imported and the environment is ready to be configured.  Enter &#8220;D ^ZTMGRSET&#8221;
+to initialize the current instance for use. Choose the default, Caché environment. Some routines are loaded and a series of prompts are shown on the screen.  The NAME OF MANAGER&#8217;S NAMESPACE, PRODUCTION (SIGN-ON) NAMESPACE, and NAME OF THIS CONFIGURATION prompts should be answered with the name of the namespace that was created earlier (VISTA in this configuration), . At the fourth prompt, &#8220;Want to rename the FileMan routines,&#8221; enter &#8220;Y&#8221; to rename the routines.</p>
+<pre class="literal-block">
+VISTA&gt; <span class="usertype">D ^ZTMGRSET</span>
+
+ZTMGRSET Version 8.0 Patch level <strong>34,36,69,94,121,127,136,191,275,355,446</strong>
+
+HELLO! I exist to assist you in correctly initializing the current account.
+
+Which MUMPS system should I install?
+
+
+1 = VAX DSM(V6), VAX DSM(V7)
+
+2 = MSM-PC/PLUS, MSM for NT or UNIX
+
+3 = Cache (VMS, NT, Linux), OpenM-NT
+
+4 = Datatree, DTM-PC, DT-MAX
+
+5 =
+
+6 =
+
+7 = GT.M (VMS)
+
+8 = GT.M (Unix)
+
+System: <span class="usertype">3</span>
+
+
+
+I will now rename a group of routines specific to your operating system.
+
+Routine:  ZOSVONT Loaded, Saved as    %ZOSV
+
+Routine:  ZIS4ONT Loaded, Saved as    %ZIS4
+
+.
+.
+.
+
+Routine: ZOSVKSOS Loaded, Saved as %ZOSVKSS
+
+Routine:  ZOSVKSD Loaded, Saved as %ZOSVKSD
+
+
+NAME OF MANAGER'S NAMESPACE: %SYS// <span class="usertype">VISTA</span>
+
+PRODUCTION (SIGN-ON) NAMESPACE: VAH// <span class="usertype">VISTA</span>
+
+NAME OF THIS CONFIGURATION: ROU// <span class="usertype">VISTA</span>
+
+
+
+ALL SET UP
+
+
+Now to load routines common to all systems.
+
+Routine:   ZTLOAD Loaded, Saved as  %ZTLOAD
+
+.
+.
+.
+
+Routine:   ZTPTCH Loaded, Saved as  %ZTPTCH
+
+Routine:   ZTRDEL Loaded, Saved as  %ZTRDEL
+
+Routine:   ZTMOVE Loaded, Saved as  %ZTMOVE
+
+Want to rename the FileMan routines: No//   <span class="usertype">YES</span>
+
+Routine:     DIDT Loaded, Saved as      %DT
+
+Routine:    DIDTC Loaded, Saved as     %DTC
+
+Routine:    DIRCR Loaded, Saved as     %RCR
+
+Installing ^%Z editor
+
+Setting ^%ZIS('C')
+
+
+
+Now, I will check your % globals...........
+
+
+ALL DONE
+
+VISTA&gt;
+</pre>
+<p>The final step needed for the testing is to alter a device within the File Manager. We need to change the $I value of the TELNET device to let the Caché terminal function as a display for the XINDEX routine.</p>
+<p>The first step is to identify yourself as a programmer and gain permissions to change the files attributes.  Enter &#8220;VISTA&gt; S DUZ=1 D Q^DI&#8221;</p>
+<p>to first get access to the File Manager and then to start the File Manager. At the Select OPTION prompt, enter &#8220;1&#8221; to edit the file entries; at the INPUT TO WHAT FILE: prompt, enter the word &#8220;DEVICE&#8221;; and at the EDIT WHICH FIELD: prompt enter &#8220;$I&#8221;. Enter &lt;Enter&gt; to end the field queries. The system will respond with a Select DEVICE NAME: prompt, enter &#8220;TELNET&#8221; to bring up an option menu and then enter the option that does not reference GT.M or UNIX. Finally, the system will respond with $I: TNA//.  Enter |TNT|, and press enter until the VISTA prompt is reached.</p>
+<pre class="literal-block">
+VISTA&gt; <span class="usertype">S DUZ=1 D Q^DI</span>
+
+VA FileMan 22.0
+
+Select OPTION: <span class="usertype">1</span>
+
+INPUT TO WHAT FILE: <span class="usertype">DEVICE</span>
+EDIT WHICH FIELD: ALL// <span class="usertype">$I</span>
+THEN EDIT FIELD: <span class="usertype">&lt;ENTER&gt;</span>
+
+Select DEVICE NAME: <span class="usertype">TELNET</span>
+     1  TELNET    TELNET    TNA
+     2  TELNET   GTM-UNIX-TELNET    TELNET   /dev/pts
+CHOOSE 1-2:  <span class="usertype">1</span>
+$I: TNA// <span class="usertype">|TNT|</span>
+
+Select DEVICE NAME: <span class="usertype">&lt;ENTER&gt;</span>
+
+Select OPTION:  <span class="usertype">&lt;ENTER&gt;</span>
+
+VISTA&gt;
+</pre>
+</div>
+</div>
+
+
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right" id="footer-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+      
+      Created using <a href="http://sphinx.pocoo.org/" target="_blank">Sphinx</a> 1.1.3.<br/>
+    </p>
+    <p class="pull-left" id="footer-left">
+      Except where otherwise noted, content on this site is licensed under a <a href="http://creativecommons.org/licenses/by/3.0/" target="_blank">Creative Commons Attribution 3.0 License</a>.
+    </p>
+    </div>
+  </div>
+</footer>
+  </body>
+</html>
