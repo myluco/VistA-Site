@@ -71,6 +71,11 @@ header h2 {
   font-family: 'Helvetica Neue', Helvetica, Arial, serif; 
 }
 
+header #h2-caption {
+ max-width: 800px;
+ margin: 0 auto;
+}
+
 #navigation {
   margin: 30px 10px 0 10px;
   width: 100%;
@@ -83,17 +88,20 @@ header h2 {
   text-align: center;
   margin: 30px auto;
   width: 100%;
+  font-family: 'Helvetica';
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
 
 #buttons #download {
-  padding-left: 150px;
-  padding-right: 150px;
+  padding-left: 80px;
+  padding-right: 80px;
 }
 
 #buttons #nav-grouping {
   margin: 10px auto;
-  width: 375px;
+  max-width: 270px;
 
 }
 
