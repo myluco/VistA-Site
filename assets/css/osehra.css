@@ -4,51 +4,6 @@ License: Apache 2.0
 
 */
 
-/* ELEMENT RESET */
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-  display: block;
-}
-body {
-  line-height: 1;
-}
-ol, ul {
-  list-style: none;
-}
-blockquote, q {
-  quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-  content: '';
-  content: none;
-}
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
 
 /* HEADER ELEMENTS */
 
@@ -56,7 +11,9 @@ header {
   padding-top: 40px;
   padding-bottom: 40px;
   font-family: 'Times New Roman', 'Helvetica Neue', Helvetica, Arial, serif; 
-  background: #2e7bcf url(../img/header-bg.png) 0 0 repeat-x;
+  /*Temporary removal for re-sizing.*/
+  /*background: #2e7bcf url(../img/header-bg.png) 0 0 repeat-x;*/
+  background: #2e7bcf;
   min-height: 300px;
   text-shadow: 0 5px 4px rgba(0, 0, 0, 0.3);
 }
@@ -72,6 +29,7 @@ header h1 {
   line-height: 1;
   margin: 0 auto;
   text-align: center;
+  font-weight: normal;
 }
 
 header #logo {
@@ -108,36 +66,42 @@ header h2 {
   text-align: center;
   margin: 0 auto;
   letter-spacing: 0;
-  padding: 50px 10px 0 10px;
+  padding: 20px 10px 0 10px;
   background: transparent;
   font-family: 'Helvetica Neue', Helvetica, Arial, serif; 
 }
 
+#navigation {
+  margin: 30px 10px 0 10px;
+  width: 100%;
+  text-align: center;
+}
+
 /* BODY ELEMENTS */
 
-/*.inner {
-  position: relative;
-  width: 940px;
-  margin: 0 auto;
-}
-*/
-
-#content-wrapper {
-  border-top: solid 1px #fff;
-  padding-top: 30px;
+#buttons {
+  text-align: center;
+  margin: 30px auto;
+  width: 100%;
 }
 
 
-/* MISC */
-
-.clearfix:after {
-  clear: both;
-  content: '.';
-  display: block;
-  visibility: hidden;
-  height: 0;
+#buttons #download {
+  padding-left: 150px;
+  padding-right: 150px;
 }
 
-.clearfix {display: inline-block;}
-* html .clearfix {height: 1%;}
-.clearfix {display: block;}
+#buttons #nav-grouping {
+  margin: 10px auto;
+  width: 375px;
+
+}
+
+#buttons #about {
+  float: left;
+}
+
+#buttons #comm {
+  float: right;
+}
+
