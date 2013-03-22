@@ -4,18 +4,20 @@ License: Apache 2.0
 
 */
 
-
 /* HEADER ELEMENTS */
 
 header {
   padding-top: 40px;
   padding-bottom: 40px;
-  font-family: 'Times New Roman', 'Helvetica Neue', Helvetica, Arial, serif; 
+  font-family: 'Times New Roman', Times, serif; 
   /*Temporary removal for re-sizing.*/
-  /*background: #2e7bcf url(../img/header-bg.png) 0 0 repeat-x;*/
-  background: #2e7bcf;
+  background: #2e7bcf url(../img/header-bg.png) 0 0 repeat-x;
+  /*background: #2e7bcf; */
   min-height: 300px;
   text-shadow: 0 5px 4px rgba(0, 0, 0, 0.3);
+  border-bottom-width: 10px;
+  border-bottom-style: solid;
+  border-bottom-color: rgb(0,70,140);;
 }
 
 header a:hover {
@@ -66,7 +68,7 @@ header h2 {
   text-align: center;
   margin: 0 auto;
   letter-spacing: 0;
-  padding: 20px 10px 0 10px;
+  padding: 20px 10px 20px 10px;
   background: transparent;
   font-family: 'Helvetica Neue', Helvetica, Arial, serif; 
 }
@@ -94,14 +96,28 @@ header #h2-caption {
 }
 
 
-#buttons #download {
-  padding-left: 80px;
-  padding-right: 80px;
+.vista-button {
+  padding: 5px 10px;
+  background:  rgb(0,70,140); 
+  border-color: rgb(0,70,140);
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  border-width: 4px;
+  border-style: solid;
+  color: white;
+  letter-spacing: 5px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, serif; 
+}
+
+#download {
+  padding: 20px 100px;
+
 }
 
 #buttons #nav-grouping {
-  margin: 10px auto;
-  max-width: 270px;
+  margin: 30px auto;
+  max-width: 330px;
 
 }
 
@@ -166,4 +182,5 @@ section {
 #nav-brand {
   font-family: "Times New Roman", "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-shadow: 0 5px 4px rgba(0, 0, 0, 0.3);
+    letter-spacing: 5px;
 }
