@@ -115,33 +115,40 @@ header #h2-caption {
 
 /* Sub-page styling. */
 
-/*
-.sub-header {
+.navbar-inner {
   background:  #2e7bcf;
-  clear: both;
-  display: block;
-  width: 100%;
 }
 
-.sub-header ul {
-  width: 940px;
-  margin: 0 auto;
-}
-
-.sub-header ul li {
-  float: left;
-  margin: 10px 10px 10px 10px;
-}
-
-.sub-header ul li a {
+.navbar .nav .active a, .navbar .nav li a:hover, .navbar .nav .active a:hover {
+  background:  rgb(0,109,217);
   color: rgb(255,255,255);
-  text-shadow: 0 5px 4px rgba(0, 0, 0, 0.3);
 }
 
-.sub-header ul li a:hover {
-  background: transparent;
-  color: rgb(0,0,0);
+.navbar .nav li a {
+  color: rgb(255,255,255);
+  text-shadow: none;
 }
 
-/*
+.navbar .brand {
+  color: rgb(255,255,255);
+  text-shadow: none;
+  background: url(../img/nav-logo.png) top left no-repeat;
+}
 
+.navbar .btn-navbar, .navbar .btn-navbar:hover {
+   background:  rgb(0,109,217); 
+}
+
+.nav-collapse .nav .nav-blue a:hover {
+    background:  rgb(0,109,217); 
+}
+
+.nav-collapse .nav .nav-blue a {
+    color: rgb(255,255,255);
+    font-weight: normal;
+}
+
+#nav-logo {
+  padding: 0 35px 35px 0;
+  margin-left: 10px;
+}
