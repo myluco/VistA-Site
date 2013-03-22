@@ -152,3 +152,12 @@ header #h2-caption {
   padding: 0 35px 35px 0;
   margin-left: 10px;
 }
+
+.sub-nav {
+  margin-top: 50px;
+  width: 200px;
+}
+
+section {
+  padding-top: 30px;
+  }
