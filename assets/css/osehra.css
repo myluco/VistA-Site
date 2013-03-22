@@ -132,7 +132,7 @@ header #h2-caption {
 .navbar .brand {
   color: rgb(255,255,255);
   text-shadow: none;
-  background: url(../img/nav-logo.png) top left no-repeat;
+  /*background: url(../img/nav-logo.png) top left no-repeat;*/
 }
 
 .navbar .btn-navbar, .navbar .btn-navbar:hover {
@@ -156,8 +156,14 @@ header #h2-caption {
 .sub-nav {
   margin-top: 50px;
   width: 200px;
+  display: block;
 }
 
 section {
   padding-top: 30px;
   }
+
+#nav-brand {
+  font-family: "Times New Roman", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-shadow: 0 5px 4px rgba(0, 0, 0, 0.3);
+}
