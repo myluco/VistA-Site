@@ -113,3 +113,35 @@ header #h2-caption {
   float: right;
 }
 
+/* Sub-page styling. */
+
+/*
+.sub-header {
+  background:  #2e7bcf;
+  clear: both;
+  display: block;
+  width: 100%;
+}
+
+.sub-header ul {
+  width: 940px;
+  margin: 0 auto;
+}
+
+.sub-header ul li {
+  float: left;
+  margin: 10px 10px 10px 10px;
+}
+
+.sub-header ul li a {
+  color: rgb(255,255,255);
+  text-shadow: 0 5px 4px rgba(0, 0, 0, 0.3);
+}
+
+.sub-header ul li a:hover {
+  background: transparent;
+  color: rgb(0,0,0);
+}
+
+/*
+
