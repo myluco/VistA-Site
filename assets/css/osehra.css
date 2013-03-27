@@ -11,8 +11,8 @@ header {
   padding-bottom: 40px;
   font-family: 'Times New Roman', Times, serif; 
   /*Temporary removal for re-sizing.*/
-  background: #2e7bcf url(../img/header-bg.png) 0 0 repeat-x;
-  /*background: #2e7bcf; */
+  /*background: #2e7bcf url(../img/header-bg.png) 0 0 repeat-x;*/
+  background: #2e7bcf; 
   min-height: 300px;
   text-shadow: 0 5px 4px rgba(0, 0, 0, 0.3);
   border-bottom-width: 10px;
@@ -183,4 +183,29 @@ section {
   font-family: "Times New Roman", "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-shadow: 0 5px 4px rgba(0, 0, 0, 0.3);
     letter-spacing: 5px;
+}
+
+/* Footer styling. */
+
+.footer {
+  background: #2e7bcf;
+  display: inline-block;
+  width: 100%;
+}
+
+.footer div {
+  margin: 5px;
+  color: rgb(255,255,255);
+  font-weight: normal;
+}
+
+.footer div a {
+  color: rgb(255,255,255);
+}
+.footer #copyright {
+float: left;
+}
+
+.footer #license {
+float: right;
 }

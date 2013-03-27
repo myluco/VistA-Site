@@ -73,7 +73,14 @@
       <hr>
 
       <div class="footer">
-        <p>&copy; Company 2013</p>
+        <div id="copyright">Copyright &copy; <A href="http://www.osehra.org" target="_blank" alt="OSEHRA">OSEHRA</A> <SCRIPT>
+          var year = new Date();
+          year = year.getYear();
+          if(year<1900) year+=1900;
+          document.write(year);
+        </SCRIPT></div><div id="license">
+        This work is licensed under a&nbsp;<a href="http://creativecommons.org/licenses/by/3.0/" target="_blank" alt="Creative Commons License">Creative Commons Attribution 3.0 Unported License</a><a href="http://creativecommons.org/licenses/by/3.0/">
+        </div>
       </div>
 
             <script type="text/javascript">
