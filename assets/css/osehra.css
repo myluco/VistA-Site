@@ -4,6 +4,18 @@ License: Apache 2.0
 
 */
 
+/*Hotfix for media padding issue.
+------------------------------------*/
+
+@media (max-width: 767px) {
+  body {
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+}
+
+
+
 /* Home Page: Header Styling.
 ------------------------------------*/
 
@@ -176,6 +188,28 @@ a.vista-button:hover {
   border-width: 5px;
 }
 
+/*Home Page: Content Styling.
+------------------------------------*/
+
+body #main-content {
+  margin-top: 30px;
+}
+
+body .container .lead {
+  color: rgb(0,0,0);
+  margin: 5px;
+}
+
+body .container h2 {
+  color: rgb(0,139,204);
+  margin: 5px;
+}
+
+body .container p {
+  margin: 5px;
+}
+
+
 /* Sub Page: Nav Bar Styling.
 ------------------------------------*/
 
@@ -184,7 +218,7 @@ a.vista-button:hover {
 }
 
 .navbar .nav .active a, .navbar .nav li a:hover, .navbar .nav .active a:hover {
-  background:  rgb(0,109,217);
+  background:  rgb(0,70,140);
   color: rgb(255,255,255);
 }
 
@@ -199,11 +233,11 @@ a.vista-button:hover {
 }
 
 .navbar .btn-navbar, .navbar .btn-navbar:hover {
-   background:  rgb(0,109,217); 
+   background:  rgb(0,70,140); 
 }
 
 .nav-collapse .nav .nav-blue a:hover {
-    background:  rgb(0,109,217); 
+    background:  rgb(0,70,140); 
 }
 
 .nav-collapse .nav .nav-blue a {
@@ -236,7 +270,7 @@ section {
 ------------------------------------*/
 
 .footer {
-  background: rgb(0,139,204);
+  background: rgb(0,70,140);
   display: inline-block;
   width: 100%;
 }
