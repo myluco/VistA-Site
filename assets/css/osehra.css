@@ -12,12 +12,9 @@ header {
   font-family: 'Times New Roman', Times, serif; 
   /*Temporary removal for re-sizing.*/
   /*background: #2e7bcf url(../img/header-bg.png) 0 0 repeat-x;*/
-  background: #2e7bcf; 
+  background: #0088CC; 
   min-height: 300px;
   text-shadow: 0 5px 4px rgba(0, 0, 0, 0.3);
-  border-bottom-width: 10px;
-  border-bottom-style: solid;
-  border-bottom-color: rgb(0,70,140);;
 }
 
 header a:hover {
@@ -82,6 +79,45 @@ header #h2-caption {
   margin: 30px 10px 0 10px;
   width: 100%;
   text-align: center;
+}
+
+/* Community members feature. */
+
+#community {
+  background: rgb(0,70,140);
+  width: 100%;
+}
+
+#community-header h2{
+  text-align: center;
+  margin:0 auto;
+  font-size: 20px;
+  color: #0088CC;
+  font-weight: normal;
+  font-family: 'Helvetica Neue', Helvetica, Arial, serif;
+  line-height: 1.3;
+  margin: 10px;
+}
+
+.community-member {
+  clear: none;
+  width: 200px;
+  float: left;
+  border: 0;
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
+#community-carousel {
+  margin: 0 auto;
+  max-width: 650px;
+  padding: 40px 75px 0px 75px;
+}
+
+.community-member h3, .community-member p {
+ color: #0088CC;
+ text-align: center;
 }
 
 /* BODY ELEMENTS */
@@ -188,15 +224,16 @@ section {
 /* Footer styling. */
 
 .footer {
-  background: #2e7bcf;
+  background: rgb(0,70,140);
   display: inline-block;
   width: 100%;
 }
 
 .footer div {
-  margin: 5px;
+  margin: 5px 20px;
   color: rgb(255,255,255);
   font-weight: normal;
+  
 }
 
 .footer div a {
