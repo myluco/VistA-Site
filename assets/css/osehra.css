@@ -331,14 +331,15 @@ div .demo-container-link {
 
 #sidebar-nav-fixed {
      position:fixed;
-     top:120px;
+     top:150px;
      width:200px;
+     overflow: auto;
 }
 
  @media (max-width: 979px) {
      #sidebar-nav-fixed {
       position: fixed;
-      top: 120px;
+      top: 150px;
      }
  }
 
@@ -351,12 +352,13 @@ div .demo-container-link {
 
 #span-fixed-sidebar {
   position: static;
-  margin-left: 220px;
+  margin-left: 230px;
+  height: 900px;
 }
 
 @media (max-width: 979px) {
      #span-fixed-sidebar {
-      margin-left: 220px;
+      margin-left: 230px;
       width: auto;
      }
 }
@@ -374,6 +376,12 @@ div .demo-container-link {
   font-family: "Times New Roman", "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-shadow: 0 5px 4px rgba(0, 0, 0, 0.3);
     letter-spacing: 5px;
+}
+
+
+.anchor {
+  display:block;
+  padding-top: 45px;
 }
 
 /* Footer styling.
