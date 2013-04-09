@@ -307,15 +307,68 @@ div .demo-container-link {
   margin-left: 10px;
 }
 
-.sub-nav {
+/*#sub-nav {
   margin-top: 50px;
   width: 200px;
   display: block;
 }
+*/
+/*#sub-nav .affix {
+  width: 1000px;
+}
 
-section {
-  padding-top: 30px;
-  }
+#sub-nav.affix {
+  position: fixed;
+  width: auto;
+  top: 0;
+  float: right;
+}*/
+
+
+/* These elements are the base, non-responsive ones. */
+
+
+
+#sidebar-nav-fixed {
+     position:fixed;
+     top:120px;
+     width:200px;
+}
+
+ @media (max-width: 979px) {
+     #sidebar-nav-fixed {
+      position: fixed;
+      top: 120px;
+     }
+ }
+
+@media (max-width: 767px) {
+    #sidebar-nav-fixed {
+      position:static;
+      width: 100%;
+    }
+}
+
+#span-fixed-sidebar {
+  position: static;
+  margin-left: 220px;
+}
+
+@media (max-width: 979px) {
+     #span-fixed-sidebar {
+      margin-left: 220px;
+      width: auto;
+     }
+}
+
+@media (max-width: 767px) {
+    #span-fixed-sidebar {
+      margin-left: 10px;
+      position:static;
+      width: 100%;
+    }
+}
+
 
 #nav-brand {
   font-family: "Times New Roman", "Helvetica Neue", Helvetica, Arial, sans-serif;

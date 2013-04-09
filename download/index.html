@@ -31,7 +31,7 @@
                                    <link rel="shortcut icon" href="../assets/ico/favicon.png">
   </head>
 
-  <body data-spy="scroll" data-target=".sub-nav">
+  <body data-spy="scroll" data-target="#sub-nav">
 
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
@@ -53,17 +53,17 @@
       </div>
     </div>
 
-    <div class="container">
-      <div class="row">
+    <div class="container-fluid">
+      <div class="row-fluid">
         <div class="span3">
-          <ul class="nav nav-pills nav-stacked sub-nav affix">
-            <li><a href="#download">Download</a></li>
-            <li><a href="#source">Source Code</a></li>
-            <li><a href="#patches">Patches</a></li>
+          <ul class="nav nav-pills nav-stacked sub-nav" id="sidebar-nav-fixed">
+            <li><a href="#dl1">Download</a></li>
+            <li><a href="#dl2">Source Code</a></li>
+            <li><a href="#dl3">Patches</a></li>
           </ul>
         </div>
-        <div class="span8">
-          <section id="download">
+        <div class="span8" id="span-fixed-sidebar">
+          <section id="dl1">
             <div class="page-header">
               <h1>Download Codeage</h1>
             </div>
@@ -76,7 +76,7 @@
             </p><p>
             Maecenas elementum, ligula in adipiscing pretium, ligula dolor fermentum mauris, quis sagittis quam urna at elit. Donec vulputate tellus in elit vulputate ac sollicitudin mauris semper. Cras porta, ligula ut suscipit pulvinar, urna nibh scelerisque libero, at mollis risus diam aliquam augue. Nunc ac est eu felis consequat ultricies. Donec hendrerit dolor sit amet elit volutpat ac fermentum quam fringilla. Nunc eu nulla ligula. Aliquam erat volutpat. Curabitur luctus nulla in dolor sollicitudin et pharetra eros ullamcorper. Ut ornare condimentum dolor a auctor. Curabitur et augue eu ligula suscipit luctus. Sed iaculis pellentesque feugiat. Sed dapibus, diam adipiscing euismod elementum, elit felis vestibulum arcu, in iaculis erat neque vitae lacus. Sed et tortor elit, vitae suscipit ante.</p>
         </section>
-            <section id="source">
+            <section id="dl2">
             <div class="page-header">
               <h1>Source Code Repository</h1>
             </div>
@@ -89,7 +89,7 @@
             </p><p>
             Maecenas elementum, ligula in adipiscing pretium, ligula dolor fermentum mauris, quis sagittis quam urna at elit. Donec vulputate tellus in elit vulputate ac sollicitudin mauris semper. Cras porta, ligula ut suscipit pulvinar, urna nibh scelerisque libero, at mollis risus diam aliquam augue. Nunc ac est eu felis consequat ultricies. Donec hendrerit dolor sit amet elit volutpat ac fermentum quam fringilla. Nunc eu nulla ligula. Aliquam erat volutpat. Curabitur luctus nulla in dolor sollicitudin et pharetra eros ullamcorper. Ut ornare condimentum dolor a auctor. Curabitur et augue eu ligula suscipit luctus. Sed iaculis pellentesque feugiat. Sed dapibus, diam adipiscing euismod elementum, elit felis vestibulum arcu, in iaculis erat neque vitae lacus. Sed et tortor elit, vitae suscipit ante.</p>
         </section>
-            <section id="patches">
+            <section id="dl3">
             <div class="page-header">
               <h1>Incremental Patches</h1>
             </div>
@@ -113,6 +113,12 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="../assets/js/jquery.js"></script>
     <script src="../assets/js/bootstrap.js"></script>
+
+    <script type="text/javascript">
+$(document).ready(function() {
+  $('#sub-nav').affix()
+});
+</script>
 
   </body>
 </html>
