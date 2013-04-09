@@ -31,7 +31,6 @@
                                    <link rel="shortcut icon" href="../assets/ico/favicon.png">
   </head>
 
-  <body>
 
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
@@ -52,21 +51,21 @@
         </div>
       </div>
     </div>
-
-    <div class="container">
-      <div class="row">
-        <div class="span3">
-          <ul class="nav nav-tabs nav-stacked affix sub-nav">
-            <li><a href="#download">Download</a></li>
-            <li><a href="#source">Source Code</a></li>
-            <li><a href="#patches">Patches</a></li>
+  <body data-spy="scroll" data-target="#navbar" data-offset="10" >
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span3" id="navbar">
+          <ul class="nav nav-pills nav-stacked sub-nav" id="sidebar-nav-fixed">
+            <li><a href="#dl1">Download</a></li>
+            <li><a href="#dl2">Source Code</a></li>
+            <li><a href="#dl3">Patches</a></li>
           </ul>
         </div>
-        <div class="span8">
-          <section id="download">
-            <div class="page-header">
-              <h1>Download Source Code</h1>
-            </div>
+        <div class="span8" id="span-fixed-sidebar" style="height: 100%;">
+          <section>
+            <span id="dl1" class="anchor"></span>
+              <h1>Download Codeage</h1>
+
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla congue lacus et diam interdum eget ullamcorper dui mattis. Phasellus nec felis sit amet purus sodales dictum. Mauris at leo est, vel tincidunt ligula. Aliquam nisi augue, ultrices et blandit sed, porttitor non risus. Pellentesque aliquam, tortor vel laoreet dignissim, magna velit condimentum mauris, vitae scelerisque lacus mauris sit amet odio. Cras ac fermentum nulla. Aliquam malesuada venenatis iaculis.</p>
             <p>Aliquam ut tortor metus, sit amet condimentum leo. Nam ac turpis dolor. Proin convallis tempor nunc at lacinia. Integer vitae tellus mauris. Vivamus convallis elementum nunc vitae pharetra. Maecenas sodales tellus non quam hendrerit eget interdum arcu faucibus. Quisque vel ipsum ut turpis aliquam tincidunt. Phasellus nec quam vel augue accumsan pharetra. Ut vitae consequat purus. Proin non urna magna, non bibendum elit. Nulla facilisi. Aliquam vel ante tellus, ac consectetur eros. Aliquam erat volutpat. Quisque non ligula dolor.
             </p><p>
@@ -76,10 +75,10 @@
             </p><p>
             Maecenas elementum, ligula in adipiscing pretium, ligula dolor fermentum mauris, quis sagittis quam urna at elit. Donec vulputate tellus in elit vulputate ac sollicitudin mauris semper. Cras porta, ligula ut suscipit pulvinar, urna nibh scelerisque libero, at mollis risus diam aliquam augue. Nunc ac est eu felis consequat ultricies. Donec hendrerit dolor sit amet elit volutpat ac fermentum quam fringilla. Nunc eu nulla ligula. Aliquam erat volutpat. Curabitur luctus nulla in dolor sollicitudin et pharetra eros ullamcorper. Ut ornare condimentum dolor a auctor. Curabitur et augue eu ligula suscipit luctus. Sed iaculis pellentesque feugiat. Sed dapibus, diam adipiscing euismod elementum, elit felis vestibulum arcu, in iaculis erat neque vitae lacus. Sed et tortor elit, vitae suscipit ante.</p>
         </section>
-            <section id="source">
-            <div class="page-header">
+            <section>
+              <span id="dl2" class="anchor"></span>
               <h1>Source Code Repository</h1>
-            </div>
+
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla congue lacus et diam interdum eget ullamcorper dui mattis. Phasellus nec felis sit amet purus sodales dictum. Mauris at leo est, vel tincidunt ligula. Aliquam nisi augue, ultrices et blandit sed, porttitor non risus. Pellentesque aliquam, tortor vel laoreet dignissim, magna velit condimentum mauris, vitae scelerisque lacus mauris sit amet odio. Cras ac fermentum nulla. Aliquam malesuada venenatis iaculis.</p>
             <p>Aliquam ut tortor metus, sit amet condimentum leo. Nam ac turpis dolor. Proin convallis tempor nunc at lacinia. Integer vitae tellus mauris. Vivamus convallis elementum nunc vitae pharetra. Maecenas sodales tellus non quam hendrerit eget interdum arcu faucibus. Quisque vel ipsum ut turpis aliquam tincidunt. Phasellus nec quam vel augue accumsan pharetra. Ut vitae consequat purus. Proin non urna magna, non bibendum elit. Nulla facilisi. Aliquam vel ante tellus, ac consectetur eros. Aliquam erat volutpat. Quisque non ligula dolor.
             </p><p>
@@ -89,10 +88,9 @@
             </p><p>
             Maecenas elementum, ligula in adipiscing pretium, ligula dolor fermentum mauris, quis sagittis quam urna at elit. Donec vulputate tellus in elit vulputate ac sollicitudin mauris semper. Cras porta, ligula ut suscipit pulvinar, urna nibh scelerisque libero, at mollis risus diam aliquam augue. Nunc ac est eu felis consequat ultricies. Donec hendrerit dolor sit amet elit volutpat ac fermentum quam fringilla. Nunc eu nulla ligula. Aliquam erat volutpat. Curabitur luctus nulla in dolor sollicitudin et pharetra eros ullamcorper. Ut ornare condimentum dolor a auctor. Curabitur et augue eu ligula suscipit luctus. Sed iaculis pellentesque feugiat. Sed dapibus, diam adipiscing euismod elementum, elit felis vestibulum arcu, in iaculis erat neque vitae lacus. Sed et tortor elit, vitae suscipit ante.</p>
         </section>
-            <section id="patches">
-            <div class="page-header">
+            <section>
+              <span id="dl3" class="anchor"></span>
               <h1>Incremental Patches</h1>
-            </div>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla congue lacus et diam interdum eget ullamcorper dui mattis. Phasellus nec felis sit amet purus sodales dictum. Mauris at leo est, vel tincidunt ligula. Aliquam nisi augue, ultrices et blandit sed, porttitor non risus. Pellentesque aliquam, tortor vel laoreet dignissim, magna velit condimentum mauris, vitae scelerisque lacus mauris sit amet odio. Cras ac fermentum nulla. Aliquam malesuada venenatis iaculis.</p>
             <p>Aliquam ut tortor metus, sit amet condimentum leo. Nam ac turpis dolor. Proin convallis tempor nunc at lacinia. Integer vitae tellus mauris. Vivamus convallis elementum nunc vitae pharetra. Maecenas sodales tellus non quam hendrerit eget interdum arcu faucibus. Quisque vel ipsum ut turpis aliquam tincidunt. Phasellus nec quam vel augue accumsan pharetra. Ut vitae consequat purus. Proin non urna magna, non bibendum elit. Nulla facilisi. Aliquam vel ante tellus, ac consectetur eros. Aliquam erat volutpat. Quisque non ligula dolor.
             </p><p>
@@ -102,28 +100,30 @@
             </p><p>
             Maecenas elementum, ligula in adipiscing pretium, ligula dolor fermentum mauris, quis sagittis quam urna at elit. Donec vulputate tellus in elit vulputate ac sollicitudin mauris semper. Cras porta, ligula ut suscipit pulvinar, urna nibh scelerisque libero, at mollis risus diam aliquam augue. Nunc ac est eu felis consequat ultricies. Donec hendrerit dolor sit amet elit volutpat ac fermentum quam fringilla. Nunc eu nulla ligula. Aliquam erat volutpat. Curabitur luctus nulla in dolor sollicitudin et pharetra eros ullamcorper. Ut ornare condimentum dolor a auctor. Curabitur et augue eu ligula suscipit luctus. Sed iaculis pellentesque feugiat. Sed dapibus, diam adipiscing euismod elementum, elit felis vestibulum arcu, in iaculis erat neque vitae lacus. Sed et tortor elit, vitae suscipit ante.</p>
         </section>
+        <br/>
         </div> 
       </div>
     </div> <!-- /container -->
 
-
+       <div class="footer">
+        <div id="copyright">Copyright &copy; <A href="http://www.osehra.org" target="_blank" alt="OSEHRA">OSEHRA</A> <SCRIPT>
+          var year = new Date();
+          year = year.getYear();
+          if(year<1900) year+=1900;
+          document.write(year);
+        </SCRIPT></div><div id="license">
+        This work is licensed under a&nbsp;<a href="http://creativecommons.org/licenses/by/3.0/" target="_blank" alt="Creative Commons License">Creative Commons Attribution 3.0 Unported License</a><a href="http://creativecommons.org/licenses/by/3.0/">
+        </div>
+      </div>
 
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="../assets/js/jquery.js"></script>
     <script src="../assets/js/bootstrap.js"></script>
-    <script src="../assets/js/bootstrap-alert.js"></script>
-    <script src="../assets/js/bootstrap-modal.js"></script>
-    <script src="../assets/js/bootstrap-dropdown.js"></script>
-    <script src="../assets/js/bootstrap-scrollspy.js"></script>
-    <script src="../assets/js/bootstrap-tab.js"></script>
-    <script src="../assets/js/bootstrap-tooltip.js"></script>
-    <script src="../assets/js/bootstrap-popover.js"></script>
-    <script src="../assets/js/bootstrap-button.js"></script>
-    <script src="../assets/js/bootstrap-collapse.js"></script>
-    <script src="../assets/js/bootstrap-carousel.js"></script>
-    <script src="../assets/js/bootstrap-typeahead.js"></script>
+
+
 
   </body>
+
 </html>

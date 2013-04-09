@@ -307,27 +307,6 @@ div .demo-container-link {
   margin-left: 10px;
 }
 
-/*#sub-nav {
-  margin-top: 50px;
-  width: 200px;
-  display: block;
-}
-*/
-/*#sub-nav .affix {
-  width: 1000px;
-}
-
-#sub-nav.affix {
-  position: fixed;
-  width: auto;
-  top: 0;
-  float: right;
-}*/
-
-
-/* These elements are the base, non-responsive ones. */
-
-
 
 #sidebar-nav-fixed {
      position:fixed;
@@ -383,6 +362,7 @@ div .demo-container-link {
   display:block;
   padding-top: 45px;
 }
+
 
 /* Footer styling.
 ------------------------------------*/
