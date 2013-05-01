@@ -1,0 +1,14 @@
+{%- if prev and next %}
+		<li class="relation-container">
+  			<a href="{{ next.link|e }}"
+        	 title="{{ _('next chapter') }}" class="relation">Next {{ "&raquo;"|safe }}</a>
+        	 <a href="{{ prev.link|e }}"
+        	 title="{{ _('previous chapter') }}" class="relation">{{ "&laquo;"|safe }} Prev</a>
+        </li>
+{%- elif prev %}
+  <li class="relation-container"><a href="{{ prev.link|e }}"
+         title="{{ _('previous chapter') }}">{{ "&laquo;"|safe }} Prev</a></li>
+{%- elif next %}
+  <li class="relation-container"><a href="{{ next.link|e }}"
+         title="{{ _('next chapter') }}">Next {{ "&raquo;"|safe }}</a></li>
+{%- endif %}
