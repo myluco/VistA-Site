@@ -2,10 +2,12 @@ This repository is for executing a sphinx-build for OSEHRA documentation.  It is
 
 To execute the build, after installing Sphinx, from the root directory execute the following:
 
-sphinx-build -a -b html -c ./_vista_sphinx/sphinx ./_vista_sphinx/documentation ./documentation
+sphinx-build -a -b html -c ./src/sphinx ./src/documentation ./documentation
 
 -a : Always rebuild all files (good for testing themes).
 -b : Build format (html for web).
 -c : location of sphinx configuration files.
 
 Other operators are source and target directories.
+
+Hopefully, this site may be modified to leverage git hooks to automate build of sphinx documentation.  For now, this is unfortunately a manual process.
