@@ -149,6 +149,38 @@ a.vista-button:hover {
   margin: 10px 10px 50px 10px;
 }
 
+#community-header ol {
+  float:right;
+  margin: 20px;
+}
+
+.carousel-indicators {
+  position:absolute;
+}
+
+.carousel {
+  margin-bottom: 0px;
+}
+
+.carousel-inner .thumbnails {
+  margin: 0 70px;
+}
+
+.carousel-inner .thumbnails li {
+  margin: 0 auto;
+  max-width: 660px;
+  float: none;
+}
+
+.carousel-inner item {
+  margin: 0 10%;
+  width: 80%;
+}
+
+.carousel-inner ul {
+  margin: 0 auto;
+  width: auto;
+}
 .community-member {
   clear: none;
   width: 200px;
@@ -163,14 +195,8 @@ a.vista-button:hover {
   margin: 0 20px;
 }
 
-#community-carousel {
-  margin: 0 auto;
-  max-width: 660px;
-}
-
 #carousel-margin-fix {
-  padding: 0px 75px 0px 75px;
-  min-height: 450px;
+  min-height: 375px;
 }
 
 .community-member h3, .community-member p {
@@ -188,9 +214,7 @@ a.vista-button:hover {
   border-width: 5px;
 }
 
-#community-carousel .left {
 
-}
 
 /*Home Page: Content Styling.
 ------------------------------------*/

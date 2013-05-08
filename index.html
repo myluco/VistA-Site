@@ -48,20 +48,18 @@
          <!-- Example row of columns -->
 
       <div class="container" id="community">
-        <div class="row-fluid">
+        <div id="community-list" class="row-fluid carousel slide">
           <div class="span12" id="community-header">
-            <h2>Featured Community Members</h2>
-          </div>
-          <div id="community-list" class="carousel slide">
             <!--Small Indicator Buttons-->
             <ol class="carousel-indicators">
-              <li data-target="#community-list" data-slide-to="0" class="active"></li>
+              <li data-target="#community-list" data-slide-to="0"></li>
               <li data-target="#community-list" data-slide-to="1"></li>
               <li data-target="#community-list" data-slide-to="2"></li>
             </ol>
+            <h2>Featured Community Members</h2>
+          </div>
+          <div id="carousel-margin-fix" class="carousel slide carousel-inner">
             <!-- Carousel items -->
-            <div id="carousel-margin-fix">
-              <div class="carousel-inner" id="community-carousel">
                 <div class="active item">
                   <ul class="thumbnails">
                     <li>
@@ -125,13 +123,12 @@
                  </li>
                </ul>
               </div>
-            </div>
+
           </div>
             <!-- Carousel nav -->
               <a class="carousel-control left" href="#community-list" data-slide="prev">&lsaquo;</a>
               <a class="carousel-control right" href="#community-list" data-slide="next">&rsaquo;</a>
           </div>
-        </div>
       </div>
 
 
