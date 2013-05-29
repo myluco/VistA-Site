@@ -87,34 +87,33 @@
               <p>While VistA's command line or 'roll-and-scroll' interface is usable via the shell prompt or remote sessions, clients which connect to server instances provide a more intuitive interface to the average user.  VistA has several interfaces available, the most robust of which is CPRS (Computerized Patient Record System) and the related suite of Delphi-based clients; these are currently in use within the Department of Veterans Affairs today.</p>
               <div class="well">Note: Currently only available for Windows operating system.</div>
               <p>To download a pre-configured CPRS client which will interact with OSEHRA demo servers, click below.</p>
-              <i class="icon-download"></i> <A href="wakawaka">Download CPRS Client</A><br><br>
-              <p>To download the most recently CPRS source code, select this link</p>
-              <i class="icon-download"></i> <A>COMING SOON - Download CPRS Source (.tar.gz)</A><br>
-              <i class="icon-download"></i> <A>COMING SOON - Download CPRS Source (.zip)</A>
+              <i class="icon-download"></i> <A href="wakawaka">Download CPRS Client</A>
         </section>
             <section>
               <span id="dl2" class="anchor"></span>
-              <h1>Source Code Repository</h1>
+              <h1>Source Code</h1>
 
             <p>OSEHRA VistA uses Git for Source Code Management.</p>
             <p>The VistA repositories are mirrored across three sites, osehra.org, github.com, and gitorious.com.
             </p><p>VistA is divided between two primary repositories, VistA-M and VistA.  The VistA-M repository is a static representation of VistA as it would appear on a file system at a point in time.  This code is not intrinsically functional and must be imported and maintained in a supporting object oriented database engine to run.  The VistA repository provides a multitude of supporting utilities and patches required to instantiate and maintain a VistA-M instance.
             </p><p>
-            Mauris sed felis sit amet augue condimentum congue. Phasellus placerat metus id elit adipiscing ac gravida purus laoreet. Nam gravida cursus tortor nec adipiscing. Ut vulputate ornare justo, eget interdum nisi ornare vitae. Nullam pulvinar dui nec elit elementum porttitor. Curabitur aliquam aliquet elit vel elementum. Donec felis urna, scelerisque id malesuada vitae, rhoncus quis magna. Pellentesque vehicula, tortor a iaculis consectetur, ligula turpis luctus neque, ac congue justo nisl a mauris. Morbi ac mauris non justo dictum pharetra a ac erat. Quisque sed imperdiet augue. Suspendisse mollis purus sit amet turpis interdum volutpat. Nullam a mi augue, sit amet sodales augue.
+            To contribute to VistA, a local copy of the Git repository should be created for changes to be committed to.  To do so, git should be installed on the development machine.  Instructions for installing and configuring Git can be found at <A HREF="http://git-scm.com/" target="_blank" alt="Git Source Code Management">git-scm.com</A>
             </p><p>
-            Maecenas elementum, ligula in adipiscing pretium, ligula dolor fermentum mauris, quis sagittis quam urna at elit. Donec vulputate tellus in elit vulputate ac sollic  itudin mauris semper. Cras porta, ligula ut suscipit pulvinar, urna nibh scelerisque libero, at mollis risus diam aliquam augue. Nunc ac est eu felis consequat ultricies. Donec hendrerit dolor sit amet elit volutpat ac fermentum quam fringilla. Nunc eu nulla ligula. Aliquam erat volutpat. Curabitur luctus nulla in dolor sollicitudin et pharetra eros ullamcorper. Ut ornare condimentum dolor a auctor. Curabitur et augue eu ligula suscipit luctus. Sed iaculis pellentesque feugiat. Sed dapibus, diam adipiscing euismod elementum, elit felis vestibulum arcu, in iaculis erat neque vitae lacus. Sed et tortor elit, vitae suscipit ante.</p>
+            <b>VistA-M Repository:</b>
+            <pre class="bold">git clone git://code.osehra.org/VistA-M.git</pre></p>
+            <p>
+            <b>VistA Repository:</b>
+            <pre>git clone git://code.osehra.org/VistA.git</pre></p>
+            <p>CPRS Source Code is currently maintained in the VistA repository.  It requires Delphi 2007 to compile, and is found in the repository at the following location</p>
+            <pre>VistA/Packages/Order Entry Results Reporting/CPRS</pre>
+            <p>For more information on how to submit changes for inclusion in these repositories, please visit the <A HREF="../community/index.html#dl2" alt="Core Development">Core Development</A> Section of the <A HREF="../community/index.html" alt="Community">Community</A> page.
         </section>
             <section>
               <span id="dl3" class="anchor"></span>
               <h1>Incremental Patches</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla congue lacus et diam interdum eget ullamcorper dui mattis. Phasellus nec felis sit amet purus sodales dictum. Mauris at leo est, vel tincidunt ligula. Aliquam nisi augue, ultrices et blandit sed, porttitor non risus. Pellentesque aliquam, tortor vel laoreet dignissim, magna velit condimentum mauris, vitae scelerisque lacus mauris sit amet odio. Cras ac fermentum nulla. Aliquam malesuada venenatis iaculis.</p>
-            <p>Aliquam ut tortor metus, sit amet condimentum leo. Nam ac turpis dolor. Proin convallis tempor nunc at lacinia. Integer vitae tellus mauris. Vivamus convallis elementum nunc vitae pharetra. Maecenas sodales tellus non quam hendrerit eget interdum arcu faucibus. Quisque vel ipsum ut turpis aliquam tincidunt. Phasellus nec quam vel augue accumsan pharetra. Ut vitae consequat purus. Proin non urna magna, non bibendum elit. Nulla facilisi. Aliquam vel ante tellus, ac consectetur eros. Aliquam erat volutpat. Quisque non ligula dolor.
-            </p><p>
-            Sed eu massa tortor. Fusce quis justo massa. Vestibulum eu lacinia purus. Duis mi diam, sollicitudin ornare accumsan in, faucibus eget purus. In venenatis eleifend fringilla. Morbi fermentum iaculis dolor, eget mattis nulla aliquet a. Morbi varius tincidunt lorem, non porta est dignissim eget. Fusce euismod libero quis ante vestibulum sed fermentum nibh tempor. Praesent at nibh sapien. Vestibulum augue odio, malesuada in commodo sit amet, ultricies et nisl. Nulla commodo eleifend mauris, quis mollis elit convallis vitae. Aliquam in condimentum nibh. Maecenas vulputate, nisi id commodo feugiat, tellus nunc hendrerit magna, scelerisque porttitor magna risus et turpis. Duis hendrerit, erat et varius tincidunt, tortor leo pharetra eros, in dapibus sem quam sit amet velit. Nulla commodo neque in odio varius sit amet euismod orci consequat. Suspendisse aliquam auctor lorem, et fermentum sapien ultricies eu.
-            </p><p>
-            Mauris sed felis sit amet augue condimentum congue. Phasellus placerat metus id elit adipiscing ac gravida purus laoreet. Nam gravida cursus tortor nec adipiscing. Ut vulputate ornare justo, eget interdum nisi ornare vitae. Nullam pulvinar dui nec elit elementum porttitor. Curabitur aliquam aliquet elit vel elementum. Donec felis urna, scelerisque id malesuada vitae, rhoncus quis magna. Pellentesque vehicula, tortor a iaculis consectetur, ligula turpis luctus neque, ac congue justo nisl a mauris. Morbi ac mauris non justo dictum pharetra a ac erat. Quisque sed imperdiet augue. Suspendisse mollis purus sit amet turpis interdum volutpat. Nullam a mi augue, sit amet sodales augue.
-            </p><p>
-            Maecenas elementum, ligula in adipiscing pretium, ligula dolor fermentum mauris, quis sagittis quam urna at elit. Donec vulputate tellus in elit vulputate ac sollicitudin mauris semper. Cras porta, ligula ut suscipit pulvinar, urna nibh scelerisque libero, at mollis risus diam aliquam augue. Nunc ac est eu felis consequat ultricies. Donec hendrerit dolor sit amet elit volutpat ac fermentum quam fringilla. Nunc eu nulla ligula. Aliquam erat volutpat. Curabitur luctus nulla in dolor sollicitudin et pharetra eros ullamcorper. Ut ornare condimentum dolor a auctor. Curabitur et augue eu ligula suscipit luctus. Sed iaculis pellentesque feugiat. Sed dapibus, diam adipiscing euismod elementum, elit felis vestibulum arcu, in iaculis erat neque vitae lacus. Sed et tortor elit, vitae suscipit ante.</p>
+            <p>Running VistA instances are updated via a series of interrellated patches.  These patches take the form of KIDS (Kernel Improvement Distribution System) files.  For a better understanding of how to apply patches, review the Patching section of the Resources page.  An in-depth discussion of current and future state patching activities is ongoing within the community, and can best be understood by exploring either the <A HREF="http://osehra.org/content/discussions" target="_blank" alt="OSEHRA Discussions">OSEHRA Discussions</A> or the <A HREF="https://groups.google.com/forum/?fromgroups#!forum/Hardhats" target="_blank" alt="Hardhats">Hardhats Mailing List.</A></p>
+            <p>Patches are currently maintained by OSEHRA in the VistA Git repository, and can be found using the naming convention below by substituting in the appropriate package name.</p>
+            <pre>VistA/Packages/[Package Name]/Patches</pre>
         </section>
         <br/>
         </div> 
