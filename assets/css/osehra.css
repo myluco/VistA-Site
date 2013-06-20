@@ -214,6 +214,22 @@ a.vista-button:hover {
   border-width: 5px;
 }
 
+.community-member-feature img {
+  width: 150px;
+  height: 150px;
+}
+
+.community-member-feature-logo {
+  width: 200px;
+}
+
+.community-member-feature-content {
+  padding-left: 20px;
+}
+
+.community-member-feature {
+  margin: 10px 0;
+}
 
 
 /*Home Page: Content Styling.
