@@ -378,7 +378,7 @@ div .demo-container-link {
  @media (max-width: 979px) {
      #sidebar-nav-fixed {
       position: fixed;
-      top: 150px;
+      top: 190px;
      }
  }
 
