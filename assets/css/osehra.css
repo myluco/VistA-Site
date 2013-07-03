@@ -84,6 +84,10 @@ header #h2-caption {
 /* Home Page: Header Button Styling.
 ------------------------------------*/
 
+.accordion-inner {
+  margin: 0 20px 0 20px;
+}
+
 #buttons {
   text-align: center;
   margin: 30px auto;
@@ -163,6 +167,10 @@ a.vista-button:hover {
   font-family: 'Helvetica Neue', Helvetica, Arial, serif;
   text-shadow: 0 5px 4px rgba(0, 0, 0, 0.3);
   font-size: 14px;
+}
+
+#community-header h3 a {
+  color: rgb(255,255,255);
 }
 
 #community-header ol {
@@ -250,6 +258,14 @@ a.vista-button:hover {
 
 /*Home Page: Content Styling.
 ------------------------------------*/
+
+.package {
+  z-index: 10;
+}
+
+.packageFrame {
+  min-height: 500px;
+}
 
 body #main-content {
   margin-top: 30px;

@@ -57,68 +57,134 @@
         <div class="span3" id="navbar">
           <ul class="nav nav-pills nav-stacked sub-nav" id="sidebar-nav-fixed">
             <li><a href="#dl1">Getting Started</a></li>
-            <li><a href="#dl2">User Training</a></li>
-            <li><a href="#dl3">Technical Resources</a></li>
-            <li><a href="#dl4">System Architecture</a></li>
+            <li><a href="#dl2">System Architecture</a></li>
+            <li><a href="#dl3">User Training</a></li>
+            <li><a href="#dl4">Technical Resources</a></li>
             <li><a href="#dl5">Complimentary Projects</a></li>
           </ul>
         </div>
         <div class="span8" id="span-fixed-sidebar" style="height: 100%;">
           <section>
             <span id="dl1" class="anchor"></span>
-              <h1>Overview</h1>
-
-            <p>VistA has been in development by the Department of Veterans Affairs for over 30 years, and has generations of knowledge integrated into its codebase.  VistA is written in MUMPS (Mass blah blah blah), or M.  This language is often referred to as "The Language of Healthcare."  Many major Electronic Health Record Systems are written in MUMPS, including Epic, McKesson, blah blah blah.</p>
-            <p>For a technician to understand VistA, it is best to understand the system from a conceptual perspective, then delve into the technical details.  This resources section first provides an overview of the history of MUMPS and VistA, and provides resources for interested parties to gain an understanding of the MUMPS language.  It then progresses into an architectural overview of VistA, and how to interact with its most core components.  Lastly, it points to supporting resources to enable individuals to explore the vibrant ecosystem which lives to support this technololgy.
+              <h1>Getting Started</h1>
+            <p>VistA has been in development by the Department of Veterans Affairs for over 30 years, and has generations of knowledge integrated into its codebase.  If you are a medical professional, it can take a while to fully understand all of the features VistA has, and how to use them in a clinical setting.  If you are a technologist, grasping how VistA operates can feel intimidating.  Hopefully, these resources can help guide you on your mission to understand VistA.</p>
+            <p>This site acts as an structured way to organize the various resources in the community, and constitutes an ever evolving directory of information.  As you run across resources, we encourage you to contribute to this body of knowledge.  In the spirit of the open-source efforts to maintain and grow VistA, this site is licensed under Apache 2.0 and maintained using Github.  Feedback or comments are greatly appreciated using ideascale, or more directly, Github pull requests for updates to this body of knowledge are highly encouraged.</p>
+<!--What is OSEHRA VistA? -->
+            <p class="lead">What is OSEHRA VistA?</p>
+            <p>OSEHRA VistA is a community supported, open-source Electronic Health Record capable of being adapted and implemented by the healthcare industry.  It maintains bi-directional compatibility with the Department of Veterans Affairs implementation of VistA, as well as the community at large, so enhancements may be shared and integrated universally.</p>
+            <p>Prior to the creation of OSEHRA VistA, VA would create code, and contribute it to the community after redacting a few sensitive or proprietary components.  This code was not inherently functional, so the companies which took the code had to make changes to allow it to run.  They would also modify it to fix problems, and extend it to offer new features.
             </p><p>
-            These resources are in now way meant to encompass the complete body of knowledge surrounding VistA's over three million lines of terse code.  In the spirit of the open source efforts to maintain and grow VistA, this site is licensed under Apache 2.0 and maintained using Github.  Feedback or comments are greatly appreciated using the integrated ideascale, or more directly, Github pull requests for updates to this body of knowledge are highly encouraged.  
-            </p><p>
-            This site is accessible on Github at the following location:
-            </p><p>
-            <A HREF="githuburl" target="_blank" alt="Github Page"><i class="icon-download"></i> OSEHRA > VistA-Site Repository</A>
-            </p>
+            Over the years, this created several major issues.  VA was never be able to integrate solutions made by the community into its version of VistA, so they never recieved the benefit of those enhancements, and the community had to constantly review and change patches VA released to allow their system to function.  Furthermore, there was little collaboration between private organizations, meaning each group had it's own fix for every problem.  These "forked" code bases meant a lot of duplicate work, and little collaboration.</p>
+            <p>To combat these issues, VA funded the creation of the organization now known as "OSEHRA."  OSEHRA helps the VA better share development with the outside community, and collaborate among industry partners.  To foster this collaboration, OSEHRA needs a code base that is supportable by both VA and the industry as a whole.  That code base is OSEHRA VistA.</p>
+            <p>By starting with a clean, "FOIA" version of VistA, and using it as a conduit through which code changes occur, OSEHRA gives VA the ability to create enhancements in the open, and internalize those enhancements into its enterprise or "gold-disk" version.  Furthermore, as the community converges onto this code base, everyone may share development costs by working on the same standard VistA, while still maintaining the extensions to VistA which they use to differentiate themselves to the market.
+            </p><p>By then iteratively certifying this code base as "Safe, Compliant, and Functional," OSEHRA gives the developer community a reasonable level of assurance that the code does what it is supposed to.  From there, integrators may take these communal enhancements and more easily share them with their customers.</p>
+            <p>OSEHRA VistA is a minimally functional version of VistA.  It is constituted of the universally adoptable components of VistA, and acts as a platform for extension and enhancement.  It comes without warranty, and will require some expertise to get up and running.</p>
+            <p>For development or educational purposes, the code base available here acts as an excellent introduction to VistA.  If you are considering implementing OSEHRA VistA in a production medical environment, this is an great place to start understanding VistA's capabilities. If implementing, OSEHRA highly recommends working with our supporting organizations to assist in the modification, implementation and support of the software.</p>
         </section>
-                  <section>
-            <span id="dl2" class="anchor"></span>
-              <h1>History</h1>
-            <p>MUMPS Resources
-            </p>
-            <A HREF="http://en.wikipedia.org/wiki/MUMPS" target="_blank" alt="Wikipedia">Wikipedia</A> - Entry describing MUMPs.
-            <A HREF="http://www.vistapedia.com/index.php/MUMPS_Overview" target="_blank" alt="VistAPedia">VistApedia - Entry describing MUMPS.
-            <A HREF="http://opensource.com/health/12/3/join-m-revolution%E2%80%94get-your-tools" target="_blank" alt="M Tutorial">Join the M revolution</A> - a Lesson in MUMPS from Dr. Luis Ibanez.
-            
+        <section>
+          <span id="dl2" class="anchor"></span>
+            <h1>System Architecture</h1>
+
+            <p>VistA can conceptually be viewed as a platform, capable of being modified and extended to meet the requirements of each installation.  This "platform" is largely constituted of M/MUMPS code, as well as several extensions, such as a CPRS, a clinician-facing Graphical User Interface.</p>
+            <p>VistA has historically been comprised of "packages," wherein each package represents a feature or development initiative.  While the code is categorized this way, VistA is a tightly integrated system, and many of these packages inherently rely on functionality in several adjoining packages.  As such, it is considered a best practice never to "remove" packages from an installation, but rather to disable and/or simply not use the package.  This approach means the code available for download at this location is a superset of functionality.</p>
+            <p>While many of our partner organizations contribute to the maintenance of the platform code, they have also developed a number of complimentary open-source projects which can meet needs not available in the platform.  For the details on what needs those projects serve, please visit the <A HREF="#dl5">Complimentary Projects</A> section.</p>
+            <p>VistA is designed to serve a hospital system, which historically has been the Department of Veterans Affairs.  As such, it provides functionality uncommon in many EHR systems, such as Police and Security Management and Library Services.  These funtions are grouped into the following:</p>
+            <p><strong>Health Provider Systems</strong> - Supports providers in the care of patients.</p>
+            <p><strong>Registration, Enrollment, and Eligibility Systems</strong> - Supports administrators in patient management.</p>
+            <p><strong>Health Data Systems</strong> - Supports standardized terminologies and repository/registry integrations.</p>
+            <p><strong>Management and Financial Systemss</strong> - Supports non-medical hospital management activities.</p>
+            <p><strong>Common Services</strong> - Supports enterprise deployments requiring multi-site integrations.</p>
+<!--
+            <h4>Health Provider Systems</h4>
+            <div class="accordion" id="accordion2">
+
+              <div class="accordion-group">
+                <div class="accordion-heading">
+                  <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+                    Care Management
+                  </a>
+                </div>
+                <div id="collapseOne" class="accordion-body collapse in">
+                  <div class="accordion-inner" id="adverseReactionTracking">
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-group">
+                <div class="accordion-heading">
+                  <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+                    Clinical Procedures
+                  </a>
+                </div>
+                <div id="collapseTwo" class="accordion-body collapse">
+                  <div class="accordion-inner" id="problemList">
+                  </div>
+                </div>
+              </div>
+            </div> -->
         </section>
             <section>
               <span id="dl3" class="anchor"></span>
-              <h1>MUMPS</h1>
+              <h1>User Training</h1>
+            <p>Whether in a medical or educational setting, training is typically required to enable staff to properly use and administer VistA.  This can either be self-administered through the use of available resources, or performed by hands-on guidance by VistA experts.  For hands on training, many of our corporate partners are willing to provide educational support for VistA; this may be a particularly attractive option for highly customized implementations.  For self-administered education, the listing below constitute the majority of the resources available to the community.</p>
+            <h5>VeHU</h5>
+            <p>The <a href="http://www.vehu.va.gov" target="_blank" alt="VeHU">Veterans e-Health University (VeHU)</a> provides a trove of training resources for individuals who want to learn about using VistA.  Topics range from health informatics, to pharmacy management.  Live and recorded webinars, presentations, and documentation are provided free of charge, and registration for an account is free and open to the public.  An excellent introduction to CPRS is freely available through VeHU, called <a href="http://www.vehu.va.gov/cprstraining/CPRSTabByTab/000000/index_000000.html" target="_blank" alt="CPRS Tab by Tab">CPRS Tab by Tab.</a></p>
+            <h5>User Manuals</h5>
+            <p>Training for many of VistA's packages can be found in the <a href="https://github.com/OSEHRA/VistA-Document-Library" target="_blank" alt="VistA Document Library">VistA Document Library</a>, the primary repository for all manuals associated with software development activities.  These guides detail how to perform common tasks using step by step directions, and are constantly updated as software is developed.</p>
+            <h5>Published Resources</h5>
+            <p>There are a number of privately published books on VistA available for purchase on <a href="http://www.amazon.com" target="_blank" alt="Amazon.com">amazon.com</a>.  <a href="http://www.vistaexpertise.net" target="_blank" alt="VistA Expertise Network">VistA Expertise Network</a> also has a series of books available VistA training.</p>
 
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla congue lacus et diam interdum eget ullamcorper dui mattis. Phasellus nec felis sit amet purus sodales dictum. Mauris at leo est, vel tincidunt ligula. Aliquam nisi augue, ultrices et blandit sed, porttitor non risus. Pellentesque aliquam, tortor vel laoreet dignissim, magna velit condimentum mauris, vitae scelerisque lacus mauris sit amet odio. Cras ac fermentum nulla. Aliquam malesuada venenatis iaculis.</p>
-            <p>Aliquam ut tortor metus, sit amet condimentum leo. Nam ac turpis dolor. Proin convallis tempor nunc at lacinia. Integer vitae tellus mauris. Vivamus convallis elementum nunc vitae pharetra. Maecenas sodales tellus non quam hendrerit eget interdum arcu faucibus. Quisque vel ipsum ut turpis aliquam tincidunt. Phasellus nec quam vel augue accumsan pharetra. Ut vitae consequat purus. Proin non urna magna, non bibendum elit. Nulla facilisi. Aliquam vel ante tellus, ac consectetur eros. Aliquam erat volutpat. Quisque non ligula dolor.
-            </p><p>
-            Sed eu massa tortor. Fusce quis justo massa. Vestibulum eu lacinia purus. Duis mi diam, sollicitudin ornare accumsan in, faucibus eget purus. In venenatis eleifend fringilla. Morbi fermentum iaculis dolor, eget mattis nulla aliquet a. Morbi varius tincidunt lorem, non porta est dignissim eget. Fusce euismod libero quis ante vestibulum sed fermentum nibh tempor. Praesent at nibh sapien. Vestibulum augue odio, malesuada in commodo sit amet, ultricies et nisl. Nulla commodo eleifend mauris, quis mollis elit convallis vitae. Aliquam in condimentum nibh. Maecenas vulputate, nisi id commodo feugiat, tellus nunc hendrerit magna, scelerisque porttitor magna risus et turpis. Duis hendrerit, erat et varius tincidunt, tortor leo pharetra eros, in dapibus sem quam sit amet velit. Nulla commodo neque in odio varius sit amet euismod orci consequat. Suspendisse aliquam auctor lorem, et fermentum sapien ultricies eu.
-            </p><p>
-            Mauris sed felis sit amet augue condimentum congue. Phasellus placerat metus id elit adipiscing ac gravida purus laoreet. Nam gravida cursus tortor nec adipiscing. Ut vulputate ornare justo, eget interdum nisi ornare vitae. Nullam pulvinar dui nec elit elementum porttitor. Curabitur aliquam aliquet elit vel elementum. Donec felis urna, scelerisque id malesuada vitae, rhoncus quis magna. Pellentesque vehicula, tortor a iaculis consectetur, ligula turpis luctus neque, ac congue justo nisl a mauris. Morbi ac mauris non justo dictum pharetra a ac erat. Quisque sed imperdiet augue. Suspendisse mollis purus sit amet turpis interdum volutpat. Nullam a mi augue, sit amet sodales augue.
-            </p><p>
-            Maecenas elementum, ligula in adipiscing pretium, ligula dolor fermentum mauris, quis sagittis quam urna at elit. Donec vulputate tellus in elit vulputate ac sollicitudin mauris semper. Cras porta, ligula ut suscipit pulvinar, urna nibh scelerisque libero, at mollis risus diam aliquam augue. Nunc ac est eu felis consequat ultricies. Donec hendrerit dolor sit amet elit volutpat ac fermentum quam fringilla. Nunc eu nulla ligula. Aliquam erat volutpat. Curabitur luctus nulla in dolor sollicitudin et pharetra eros ullamcorper. Ut ornare condimentum dolor a auctor. Curabitur et augue eu ligula suscipit luctus. Sed iaculis pellentesque feugiat. Sed dapibus, diam adipiscing euismod elementum, elit felis vestibulum arcu, in iaculis erat neque vitae lacus. Sed et tortor elit, vitae suscipit ante.</p>
+
+
         </section>
             <section>
               <span id="dl4" class="anchor"></span>
-              <h1>Architecture</h1>
-            <p>OSEHRA VistA's source code contains documentation on how to perform some basic configuration tasks, such as instantiating a basic version of VistA for development purposes.  This documentation is available in ReStructured Text format (.rst) in the 'Documentation' Folder of the code.  Additionally, OSEHRA incrementally renders this information into an easily browsable website located below:</p>
-            <i class="icon-circle-arrow-right"></i> <a href="documentation/index.html" target="_blank">OSEHRA VistA Documentation</a><br><br>
+              <h1>Technical Resources</h1>
+              <p>Getting started technically in VistA can be a daunting task.  Fortunately, there are a number of resources available to the community to help you get started.</p>
+              <p class="lead">Getting Started</p>
+              
+              <h5><a href="documentation/index.html" target="_blank">OSEHRA Installation Guide</a></h5>
+              <p>OSEHRA VistA's source code contains documentation on how to perform some basic configuration tasks, such as instantiating a version of VistA for development purposes.  This documentation is available in ReStructured Text format (.rst) in the 'Documentation' Folder of the "VistA" repository.  Additionally, OSEHRA incrementally renders this information into an easily browsable website accessible <a href="documentation/index.html" target="_blank">here</a>.</p>
 
+              <h5><a href="http://wiki.osehra.org/pages/viewpage.action?pageId=4522792" target="_blank">Development Environment Install Guide</a></h5>
+              <p>This guide provides basic instructions for creating an OSEHRA VistA development environment, and includes instructions on how to install some of the complimentary technologies to VistA often used in development.</p>
 
-            <p>Aliquam ut tortor metus, sit amet condimentum leo. Nam ac turpis dolor. Proin convallis tempor nunc at lacinia. Integer vitae tellus mauris. Vivamus convallis elementum nunc vitae pharetra. Maecenas sodales tellus non quam hendrerit eget interdum arcu faucibus. Quisque vel ipsum ut turpis aliquam tincidunt. Phasellus nec quam vel augue accumsan pharetra. Ut vitae consequat purus. Proin non urna magna, non bibendum elit. Nulla facilisi. Aliquam vel ante tellus, ac consectetur eros. Aliquam erat volutpat. Quisque non ligula dolor.
-            </p><p>
-            Sed eu massa tortor. Fusce quis justo massa. Vestibulum eu lacinia purus. Duis mi diam, sollicitudin ornare accumsan in, faucibus eget purus. In venenatis eleifend fringilla. Morbi fermentum iaculis dolor, eget mattis nulla aliquet a. Morbi varius tincidunt lorem, non porta est dignissim eget. Fusce euismod libero quis ante vestibulum sed fermentum nibh tempor. Praesent at nibh sapien. Vestibulum augue odio, malesuada in commodo sit amet, ultricies et nisl. Nulla commodo eleifend mauris, quis mollis elit convallis vitae. Aliquam in condimentum nibh. Maecenas vulputate, nisi id commodo feugiat, tellus nunc hendrerit magna, scelerisque porttitor magna risus et turpis. Duis hendrerit, erat et varius tincidunt, tortor leo pharetra eros, in dapibus sem quam sit amet velit. Nulla commodo neque in odio varius sit amet euismod orci consequat. Suspendisse aliquam auctor lorem, et fermentum sapien ultricies eu.
-            </p><p>
-            Mauris sed felis sit amet augue condimentum congue. Phasellus placerat metus id elit adipiscing ac gravida purus laoreet. Nam gravida cursus tortor nec adipiscing. Ut vulputate ornare justo, eget interdum nisi ornare vitae. Nullam pulvinar dui nec elit elementum porttitor. Curabitur aliquam aliquet elit vel elementum. Donec felis urna, scelerisque id malesuada vitae, rhoncus quis magna. Pellentesque vehicula, tortor a iaculis consectetur, ligula turpis luctus neque, ac congue justo nisl a mauris. Morbi ac mauris non justo dictum pharetra a ac erat. Quisque sed imperdiet augue. Suspendisse mollis purus sit amet turpis interdum volutpat. Nullam a mi augue, sit amet sodales augue.
-            </p><p>
-            Maecenas elementum, ligula in adipiscing pretium, ligula dolor fermentum mauris, quis sagittis quam urna at elit. Donec vulputate tellus in elit vulputate ac sollicitudin mauris semper. Cras porta, ligula ut suscipit pulvinar, urna nibh scelerisque libero, at mollis risus diam aliquam augue. Nunc ac est eu felis consequat ultricies. Donec hendrerit dolor sit amet elit volutpat ac fermentum quam fringilla. Nunc eu nulla ligula. Aliquam erat volutpat. Curabitur luctus nulla in dolor sollicitudin et pharetra eros ullamcorper. Ut ornare condimentum dolor a auctor. Curabitur et augue eu ligula suscipit luctus. Sed iaculis pellentesque feugiat. Sed dapibus, diam adipiscing euismod elementum, elit felis vestibulum arcu, in iaculis erat neque vitae lacus. Sed et tortor elit, vitae suscipit ante.</p>
+              <h5><a href="http://www.hardhats.org/projects/VistA_Install/Vista_Install.html" target="_blank">Hardhats Guide to VistA Installation</a></h5>
+              <p>An older, but technically in depth guide to installing VistA on a Windows/Cache based system.</p>
+              <p class="lead">Configuration/Administration</p>
+              <p class="lead">M/MUMPS</p>
+
+              <h5><a HREF="http://opensource.com/health/12/3/join-m-revolution%E2%80%94get-your-tools" target="_blank" alt="M Tutorial">M-Tutorial</a></h5>
+              <p>Join the M revolution - a Lesson in MUMPS from Dr. Luis Ibanez.</p>
+
+              <h5><a href="http://en.wikipedia.org/wiki/MUMPS" target="_blank" alt="Wikipedia">Wikipedia</a></h5>
+              <p>Wikipedia Entry on MUMPS, highlights language history and basic syntax.</p>
+
+              <h5><a href="http://71.174.62.16/Demo/AnnoStd" target="_blank" alt="Annotated Standard">The annotated MUMPS standards</a></h5>
+              <p>Publicly available reference guide for MUMPS standard.</p>
+
+              <h5><a href="http://mumps.sourceforge.net/docs.html" target="_blank" alt="Documentation">MUMPS Documentation</a></h5>
+              <p>Publicly available overview of MUMPS language.</p>
+
+              <h5><a href="http://www.vistaexpertise.net/mumpsbooks.html" target="_blank" alt="MUMPS Pocket Guide">MUMPS Pocket Guide</a></h5>
+              <p>Book published by <a href="" target="_blank" alt="VistA Expertise Network">VistA Expertise Network</a> outlining standard MUMPS Syntax</p>
+
+              <h5><a href="http://www.pioneerdatasys.com/site/train/m2s.html" target="_blank" alt="Pioneer Data Systems">Pioneer MUMPS Training</a></h5>
+              <p>Pioneer Data Systems offers MUMPS programming training classes.</p>
+
+              <p class="lead">Additional Resources</p>
+              <h5><a href="http://www.osehra.org" target="_blank" alt="OSEHRA Forums">OSEHRA Workgroups and Forums</a></h5>
+              <p>The OSEHRA Forums and Workgroups cover a broad range of topics relating to VistA.</p>
+              <h5><a href="https://groups.google.com/forum/#!forum/Hardhats" target="_blank" alt="Hardhats">Hardhats Community</a></h5>
+              <p>The Hardhats community is a large and active technical group focused on VistA; their forums contain a great amount of information on proper configuration and installation of VistA.
+              <h5><a href="http://www.vistapedia.com" target="_blank" alt="Vistapedia">Vistapedia</a></h5>
+              <p>This WorldVistA-maintained resource provides valuable information on VistA configuration and installation</p>
+
+              <h5><a href="http://www.vxvista.org" target="_blank" alt="VistA Extension Hub">VistA Extension Hub</a></h5>
+              <p>The DSS-maintained VistA Extensions Hub contains a trove of information on VistA, with a great number of recorded webinars and an active community of participants.</p>  
         </section>
         <section>
               <span id="dl5" class="anchor"></span>
-              <h1>Introduction</h1>
+              <h1>Complimentary Projects</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla congue lacus et diam interdum eget ullamcorper dui mattis. Phasellus nec felis sit amet purus sodales dictum. Mauris at leo est, vel tincidunt ligula. Aliquam nisi augue, ultrices et blandit sed, porttitor non risus. Pellentesque aliquam, tortor vel laoreet dignissim, magna velit condimentum mauris, vitae scelerisque lacus mauris sit amet odio. Cras ac fermentum nulla. Aliquam malesuada venenatis iaculis.</p>
             <p>Aliquam ut tortor metus, sit amet condimentum leo. Nam ac turpis dolor. Proin convallis tempor nunc at lacinia. Integer vitae tellus mauris. Vivamus convallis elementum nunc vitae pharetra. Maecenas sodales tellus non quam hendrerit eget interdum arcu faucibus. Quisque vel ipsum ut turpis aliquam tincidunt. Phasellus nec quam vel augue accumsan pharetra. Ut vitae consequat purus. Proin non urna magna, non bibendum elit. Nulla facilisi. Aliquam vel ante tellus, ac consectetur eros. Aliquam erat volutpat. Quisque non ligula dolor.
             </p><p>
@@ -128,59 +194,6 @@
             </p><p>
             Maecenas elementum, ligula in adipiscing pretium, ligula dolor fermentum mauris, quis sagittis quam urna at elit. Donec vulputate tellus in elit vulputate ac sollicitudin mauris semper. Cras porta, ligula ut suscipit pulvinar, urna nibh scelerisque libero, at mollis risus diam aliquam augue. Nunc ac est eu felis consequat ultricies. Donec hendrerit dolor sit amet elit volutpat ac fermentum quam fringilla. Nunc eu nulla ligula. Aliquam erat volutpat. Curabitur luctus nulla in dolor sollicitudin et pharetra eros ullamcorper. Ut ornare condimentum dolor a auctor. Curabitur et augue eu ligula suscipit luctus. Sed iaculis pellentesque feugiat. Sed dapibus, diam adipiscing euismod elementum, elit felis vestibulum arcu, in iaculis erat neque vitae lacus. Sed et tortor elit, vitae suscipit ante.</p>
         </section>
-        <section>
-              <span id="dl6" class="anchor"></span>
-              <h1>Bootstrapping</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla congue lacus et diam interdum eget ullamcorper dui mattis. Phasellus nec felis sit amet purus sodales dictum. Mauris at leo est, vel tincidunt ligula. Aliquam nisi augue, ultrices et blandit sed, porttitor non risus. Pellentesque aliquam, tortor vel laoreet dignissim, magna velit condimentum mauris, vitae scelerisque lacus mauris sit amet odio. Cras ac fermentum nulla. Aliquam malesuada venenatis iaculis.</p>
-            <p>Aliquam ut tortor metus, sit amet condimentum leo. Nam ac turpis dolor. Proin convallis tempor nunc at lacinia. Integer vitae tellus mauris. Vivamus convallis elementum nunc vitae pharetra. Maecenas sodales tellus non quam hendrerit eget interdum arcu faucibus. Quisque vel ipsum ut turpis aliquam tincidunt. Phasellus nec quam vel augue accumsan pharetra. Ut vitae consequat purus. Proin non urna magna, non bibendum elit. Nulla facilisi. Aliquam vel ante tellus, ac consectetur eros. Aliquam erat volutpat. Quisque non ligula dolor.
-            </p><p>
-            Sed eu massa tortor. Fusce quis justo massa. Vestibulum eu lacinia purus. Duis mi diam, sollicitudin ornare accumsan in, faucibus eget purus. In venenatis eleifend fringilla. Morbi fermentum iaculis dolor, eget mattis nulla aliquet a. Morbi varius tincidunt lorem, non porta est dignissim eget. Fusce euismod libero quis ante vestibulum sed fermentum nibh tempor. Praesent at nibh sapien. Vestibulum augue odio, malesuada in commodo sit amet, ultricies et nisl. Nulla commodo eleifend mauris, quis mollis elit convallis vitae. Aliquam in condimentum nibh. Maecenas vulputate, nisi id commodo feugiat, tellus nunc hendrerit magna, scelerisque porttitor magna risus et turpis. Duis hendrerit, erat et varius tincidunt, tortor leo pharetra eros, in dapibus sem quam sit amet velit. Nulla commodo neque in odio varius sit amet euismod orci consequat. Suspendisse aliquam auctor lorem, et fermentum sapien ultricies eu.
-            </p><p>
-            Mauris sed felis sit amet augue condimentum congue. Phasellus placerat metus id elit adipiscing ac gravida purus laoreet. Nam gravida cursus tortor nec adipiscing. Ut vulputate ornare justo, eget interdum nisi ornare vitae. Nullam pulvinar dui nec elit elementum porttitor. Curabitur aliquam aliquet elit vel elementum. Donec felis urna, scelerisque id malesuada vitae, rhoncus quis magna. Pellentesque vehicula, tortor a iaculis consectetur, ligula turpis luctus neque, ac congue justo nisl a mauris. Morbi ac mauris non justo dictum pharetra a ac erat. Quisque sed imperdiet augue. Suspendisse mollis purus sit amet turpis interdum volutpat. Nullam a mi augue, sit amet sodales augue.
-            </p><p>
-            Maecenas elementum, ligula in adipiscing pretium, ligula dolor fermentum mauris, quis sagittis quam urna at elit. Donec vulputate tellus in elit vulputate ac sollicitudin mauris semper. Cras porta, ligula ut suscipit pulvinar, urna nibh scelerisque libero, at mollis risus diam aliquam augue. Nunc ac est eu felis consequat ultricies. Donec hendrerit dolor sit amet elit volutpat ac fermentum quam fringilla. Nunc eu nulla ligula. Aliquam erat volutpat. Curabitur luctus nulla in dolor sollicitudin et pharetra eros ullamcorper. Ut ornare condimentum dolor a auctor. Curabitur et augue eu ligula suscipit luctus. Sed iaculis pellentesque feugiat. Sed dapibus, diam adipiscing euismod elementum, elit felis vestibulum arcu, in iaculis erat neque vitae lacus. Sed et tortor elit, vitae suscipit ante.</p>
-        </section>
-        <section>
-              <span id="dl7" class="anchor"></span>
-              <h1>Resources</h1>
-            <p>Below is a working list of resources the community has made available for use.  This is in no way a complete list, and new contributions are welcome.</p>
-            <p class="lead">Installation Links.</p>
-            <p>
-              <A HREF="documentation/index.html" target="_blank" alt="External Link"><i class="icon-circle-arrow-right"></i> OSEHRA's Installation Guide.</A></br>
-              A continually growing guide on how to install and run OSEHRA VistA.
-            </p>
-            <p><A HREF="http://wiki.osehra.org/pages/viewpage.action?pageId=3047628#Developmentenvironmentinstall(OSEHRAVM)-axiom" target="_blank" alt="External Link"><i class="icon-circle-arrow-right"></i> Christopher Edwards' Installation Guide.</A></br>
-              A wiki guide used by Christopher Edwards to documentation how to install developer machines (requires free confluence account).
-            </p>
-            <p><A HREF="http://www.vistapedia.com/index.php/Begin_Configuration_of_Vista" target="_blank" alt="External Link"><i class="icon-globe"></i> Beginning Configuration of VistA.</A></br>
-              WorldVistA guidance on initial VistA configuration from 2005.
-            </p>
-            <p><A HREF="http://www.vistapedia.com/index.php/Installation_How_To_VistA_GT.M_Ubuntu_Linux#Chapter_3_-_VistA_Installation_Notes" target="_blank" alt="External Link"><i class="icon-globe"></i> VistA GT.M Ubuntu Guidance.</A></br>
-              WorldVistA Guidance on installation of VistA on GT.M and Ubuntu.
-            </p>
-            <p><A HREF="http://www.va.gov/VISTA_MONOGRAPH/docs/2008_2009_VistAHealtheVet_Monograph_FC_0309.pdf" target="_blank" alt="External Link"><i class="icon-file"></i> VistA Monograph.</A></br>
-              The VistA Monograph provides an introduction to various functions of VistA.
-            </p>
-            <p><A HREF="https://github.com/OSEHRA/VistA-Document-Library" target="_blank" alt="External Link"><i class="icon-file"></i> VistA Document Library (VDL).</A></br>
-              OSEHRA Maintained Version of the VistA Document Library, a compendium of knowledge on VistA.
-            </p>
-
-
-            
-        </section>
-        <section>
-              <span id="dl8" class="anchor"></span>
-              <h1>Citations</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla congue lacus et diam interdum eget ullamcorper dui mattis. Phasellus nec felis sit amet purus sodales dictum. Mauris at leo est, vel tincidunt ligula. Aliquam nisi augue, ultrices et blandit sed, porttitor non risus. Pellentesque aliquam, tortor vel laoreet dignissim, magna velit condimentum mauris, vitae scelerisque lacus mauris sit amet odio. Cras ac fermentum nulla. Aliquam malesuada venenatis iaculis.</p>
-            <p>Aliquam ut tortor metus, sit amet condimentum leo. Nam ac turpis dolor. Proin convallis tempor nunc at lacinia. Integer vitae tellus mauris. Vivamus convallis elementum nunc vitae pharetra. Maecenas sodales tellus non quam hendrerit eget interdum arcu faucibus. Quisque vel ipsum ut turpis aliquam tincidunt. Phasellus nec quam vel augue accumsan pharetra. Ut vitae consequat purus. Proin non urna magna, non bibendum elit. Nulla facilisi. Aliquam vel ante tellus, ac consectetur eros. Aliquam erat volutpat. Quisque non ligula dolor.
-            </p><p>
-            Sed eu massa tortor. Fusce quis justo massa. Vestibulum eu lacinia purus. Duis mi diam, sollicitudin ornare accumsan in, faucibus eget purus. In venenatis eleifend fringilla. Morbi fermentum iaculis dolor, eget mattis nulla aliquet a. Morbi varius tincidunt lorem, non porta est dignissim eget. Fusce euismod libero quis ante vestibulum sed fermentum nibh tempor. Praesent at nibh sapien. Vestibulum augue odio, malesuada in commodo sit amet, ultricies et nisl. Nulla commodo eleifend mauris, quis mollis elit convallis vitae. Aliquam in condimentum nibh. Maecenas vulputate, nisi id commodo feugiat, tellus nunc hendrerit magna, scelerisque porttitor magna risus et turpis. Duis hendrerit, erat et varius tincidunt, tortor leo pharetra eros, in dapibus sem quam sit amet velit. Nulla commodo neque in odio varius sit amet euismod orci consequat. Suspendisse aliquam auctor lorem, et fermentum sapien ultricies eu.
-            </p><p>
-            Mauris sed felis sit amet augue condimentum congue. Phasellus placerat metus id elit adipiscing ac gravida purus laoreet. Nam gravida cursus tortor nec adipiscing. Ut vulputate ornare justo, eget interdum nisi ornare vitae. Nullam pulvinar dui nec elit elementum porttitor. Curabitur aliquam aliquet elit vel elementum. Donec felis urna, scelerisque id malesuada vitae, rhoncus quis magna. Pellentesque vehicula, tortor a iaculis consectetur, ligula turpis luctus neque, ac congue justo nisl a mauris. Morbi ac mauris non justo dictum pharetra a ac erat. Quisque sed imperdiet augue. Suspendisse mollis purus sit amet turpis interdum volutpat. Nullam a mi augue, sit amet sodales augue.
-            </p><p>
-            Maecenas elementum, ligula in adipiscing pretium, ligula dolor fermentum mauris, quis sagittis quam urna at elit. Donec vulputate tellus in elit vulputate ac sollicitudin mauris semper. Cras porta, ligula ut suscipit pulvinar, urna nibh scelerisque libero, at mollis risus diam aliquam augue. Nunc ac est eu felis consequat ultricies. Donec hendrerit dolor sit amet elit volutpat ac fermentum quam fringilla. Nunc eu nulla ligula. Aliquam erat volutpat. Curabitur luctus nulla in dolor sollicitudin et pharetra eros ullamcorper. Ut ornare condimentum dolor a auctor. Curabitur et augue eu ligula suscipit luctus. Sed iaculis pellentesque feugiat. Sed dapibus, diam adipiscing euismod elementum, elit felis vestibulum arcu, in iaculis erat neque vitae lacus. Sed et tortor elit, vitae suscipit ante.</p>
-        </section>
-        <br/>
         </div> 
       </div>
     </div> <!-- /container -->
@@ -192,7 +205,7 @@
           if(year<1900) year+=1900;
           document.write(year);
         </SCRIPT></div><div id="license">
-        This work is licensed under a&nbsp;<a href="http://creativecommons.org/licenses/by/3.0/" target="_blank" alt="Creative Commons License">Creative Commons Attribution 3.0 Unported License</a><a href="http://creativecommons.org/licenses/by/3.0/">
+        This work is licensed under a&nbsp;<a href="http://creativecommons.org/licenses/by/3.0/" target="_blank" alt="Creative Commons License">Creative Commons Attribution 3.0 Unported License</a>
         </div>
       </div>
 
@@ -201,8 +214,21 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="../assets/js/jquery.js"></script>
     <script src="../assets/js/bootstrap.js"></script>
-
-
+  <script>
+    $(".package").popover();
+  </script>
+  <script>
+  //Helper Script which populates package information from sub pages.
+  //NOTE:  Will not work locally with Chrome.
+    $('.accordion-inner').each( function( index ) {
+                    //$('.footer').append(index);
+       var packageName = $(this).attr("id");
+       if (packageName) {
+          var packagePath = "./packages/" + packageName + ".html";
+          $(this).load(packagePath);
+       }
+    });
+  </script>
 
   </body>
 
