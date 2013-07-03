@@ -74,17 +74,16 @@
             <p>OSEHRA VistA is a community supported, open-source Electronic Health Record capable of being adapted and implemented by the healthcare industry.  It maintains bi-directional compatibility with the Department of Veterans Affairs implementation of VistA, as well as the community at large, so enhancements may be shared and integrated universally.</p>
             <p>Prior to the creation of OSEHRA VistA, VA would create code, and contribute it to the community after redacting a few sensitive or proprietary components.  This code was not inherently functional, so the companies which took the code had to make changes to allow it to run.  They would also modify it to fix problems, and extend it to offer new features.
             </p><p>
-            Over the years, this created several major issues.  VA was never be able to integrate solutions made by the community into its version of VistA, so they never recieved the benefit of those enhancements, and the community had to constantly review and change patches VA released to allow their system to function.  Furthermore, there was little collaboration between private organizations, meaning each group had it's own fix for every problem.  These "forked" code bases meant a lot of duplicate work, and little collaboration.</p>
-            <p>To combat these issues, VA funded the creation of the organization now known as "OSEHRA."  OSEHRA helps the VA better share development with the outside community, and collaborate among industry partners.  To foster this collaboration, OSEHRA needs a code base that is supportable by both VA and the industry as a whole.  That code base is OSEHRA VistA.</p>
-            <p>By starting with a clean, "FOIA" version of VistA, and using it as a conduit through which code changes occur, OSEHRA gives VA the ability to create enhancements in the open, and internalize those enhancements into its enterprise or "gold-disk" version.  Furthermore, as the community converges onto this code base, everyone may share development costs by working on the same standard VistA, while still maintaining the extensions to VistA which they use to differentiate themselves to the market.
-            </p><p>By then iteratively certifying this code base as "Safe, Compliant, and Functional," OSEHRA gives the developer community a reasonable level of assurance that the code does what it is supposed to.  From there, integrators may take these communal enhancements and more easily share them with their customers.</p>
-            <p>OSEHRA VistA is a minimally functional version of VistA.  It is constituted of the universally adoptable components of VistA, and acts as a platform for extension and enhancement.  It comes without warranty, and will require some expertise to get up and running.</p>
-            <p>For development or educational purposes, the code base available here acts as an excellent introduction to VistA.  If you are considering implementing OSEHRA VistA in a production medical environment, this is an great place to start understanding VistA's capabilities. If implementing, OSEHRA highly recommends working with our supporting organizations to assist in the modification, implementation and support of the software.</p>
+            Over the years, this created several major issues.  VA was never be able to integrate solutions made by the community into its version of VistA, so they never received the benefit of those enhancements, and the community had to constantly review and change patches VA released for their system to function.  Furthermore, there was little collaboration between private organizations, meaning each group had its own fix for every problem.  These "forked" code bases meant a lot of duplicate work, and sporadic collaboration.</p>
+            <p>To combat these issues, VA funded the creation of the organization now known as "OSEHRA."  OSEHRA helps VA better share development with the outside community, and collaborate among industry partners.  To foster this collaboration, OSEHRA needs a code base that is supportable by both VA and the industry as a whole.  That code base is OSEHRA VistA.</p>
+            <p>By starting with a clean, "FOIA" version of VistA, and using it as a conduit through which code changes occur, OSEHRA gives VA the ability to create or adopt enhancements in the open, and internalize those enhancements into its enterprise version.  Furthermore, as the community converges onto this standard, everyone may share development costs by working on the same VistA, while still maintaining the extensions they use to differentiate themselves to the market.
+            </p><p>By iteratively certifying this code base as "Safe, Compliant, and Functional," OSEHRA gives the developer community a reasonable level of assurance that the code does what it is supposed to.  From there, integrators may take these communal enhancements and more easily share them with their customers.</p>
+            <p>OSEHRA VistA is a minimally functional version of VistA.  It is constituted of the universally accepted components of VistA, and acts as a platform for extension and enhancement.  It comes without warranty, and will require some expertise to get up and running.</p>
+            <p>For development or educational purposes, the code base available here acts as an excellent introduction to VistA.  If you are considering implementing OSEHRA VistA in a medical environment, this is an great place to start understanding VistA's capabilities. If implementing, OSEHRA highly recommends working with our supporting organizations to assist in the modification, implementation and support of the software.</p>
         </section>
         <section>
           <span id="dl2" class="anchor"></span>
             <h1>System Architecture</h1>
-
             <p>VistA can conceptually be viewed as a platform, capable of being modified and extended to meet the requirements of each installation.  This "platform" is largely constituted of M/MUMPS code, as well as several extensions, such as a CPRS, a clinician-facing Graphical User Interface.</p>
             <p>VistA has historically been comprised of "packages," wherein each package represents a feature or development initiative.  While the code is categorized this way, VistA is a tightly integrated system, and many of these packages inherently rely on functionality in several adjoining packages.  As such, it is considered a best practice never to "remove" packages from an installation, but rather to disable and/or simply not use the package.  This approach means the code available for download at this location is a superset of functionality.</p>
             <p>While many of our partner organizations contribute to the maintenance of the platform code, they have also developed a number of complimentary open-source projects which can meet needs not available in the platform.  For the details on what needs those projects serve, please visit the <A HREF="#dl5">Complimentary Projects</A> section.</p>
@@ -92,7 +91,7 @@
             <p><strong>Health Provider Systems</strong> - Supports providers in the care of patients.</p>
             <p><strong>Registration, Enrollment, and Eligibility Systems</strong> - Supports administrators in patient management.</p>
             <p><strong>Health Data Systems</strong> - Supports standardized terminologies and repository/registry integrations.</p>
-            <p><strong>Management and Financial Systemss</strong> - Supports non-medical hospital management activities.</p>
+            <p><strong>Management and Financial Systems</strong> - Supports non-medical hospital management activities.</p>
             <p><strong>Common Services</strong> - Supports enterprise deployments requiring multi-site integrations.</p>
 <!--
             <h4>Health Provider Systems</h4>
@@ -150,7 +149,12 @@
 
               <h5><a href="http://www.hardhats.org/projects/VistA_Install/Vista_Install.html" target="_blank">Hardhats Guide to VistA Installation</a></h5>
               <p>An older, but technically in depth guide to installing VistA on a Windows/Cache based system.</p>
+            
               <p class="lead">Configuration/Administration</p>
+
+              <h5><a href="http://en.wikipedia.org/wiki/MUMPS" target="_blank" alt="Wikipedia">Wikipedia</a></h5>
+              <p>Wikipedia Entry on MUMPS, highlights language history and basic syntax.</p>
+
               <p class="lead">M/MUMPS</p>
 
               <h5><a HREF="http://opensource.com/health/12/3/join-m-revolution%E2%80%94get-your-tools" target="_blank" alt="M Tutorial">M-Tutorial</a></h5>
@@ -165,7 +169,7 @@
               <h5><a href="http://mumps.sourceforge.net/docs.html" target="_blank" alt="Documentation">MUMPS Documentation</a></h5>
               <p>Publicly available overview of MUMPS language.</p>
 
-              <h5><a href="http://www.vistaexpertise.net/mumpsbooks.html" target="_blank" alt="MUMPS Pocket Guide">MUMPS Pocket Guide</a></h5>
+              <h5><a href="http://www.vistaexpertise.net/mumpsbooks.html" target="_blank" alt="MUMPS Pocket Guide">Standard MUMPS Pocket Guide</a></h5>
               <p>Book published by <a href="" target="_blank" alt="VistA Expertise Network">VistA Expertise Network</a> outlining standard MUMPS Syntax</p>
 
               <h5><a href="http://www.pioneerdatasys.com/site/train/m2s.html" target="_blank" alt="Pioneer Data Systems">Pioneer MUMPS Training</a></h5>
