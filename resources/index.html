@@ -246,12 +246,15 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="../assets/js/jquery.js"></script>
     <script src="../assets/js/bootstrap.js"></script>
+    <script src="../assets/js/jquery.csv-0.71.min.js"></script>
   <script>
     $(".package").popover();
   </script>
   <script>
   //Helper Script which populates package information from sub pages.
   //NOTE:  Will not work locally with Chrome.
+
+
     $('.accordion-inner').each( function( index ) {
                     //$('.footer').append(index);
        var packageName = $(this).attr("id");
